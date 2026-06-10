@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Purshottam Sri Ram P.G. College</title>
+  <!-- CSS Links -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    .page-header {
+      background: linear-gradient(rgba(10, 31, 92, 0.85), rgba(10, 31, 92, 0.85)), url('https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center;
+      background-size: cover;
+      padding: 60px 0;
+      text-align: center;
+      color: white;
+    }
+    .page-header h1 { font-weight: 800; font-size: 2.8rem; }
+    .breadcrumb-item a { color: var(--gold); text-decoration: none; }
+    .breadcrumb-item.active { color: rgba(255,255,255,0.8); }
+
+    .contact-section { padding: 70px 0; background: #fff; }
+    .section-eyebrow { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 3px; color: var(--saffron); font-weight: 700; margin-bottom: 8px; }
+    .section-title { font-size: clamp(1.5rem, 4vw, 2.2rem); font-weight: 800; color: var(--navy); margin-bottom: 10px; }
+    .section-divider { width: 60px; height: 4px; background: linear-gradient(90deg, var(--saffron), var(--gold)); border-radius: 2px; margin-bottom: 40px; }
+
+    .contact-card { background: linear-gradient(135deg, var(--navy), #1a3a8f); border-radius: 20px; padding: 40px; color: white; height: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+    .contact-item { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 25px; }
+    .contact-icon { width: 45px; height: 45px; background: rgba(255,255,255,0.1); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; border: 1px solid rgba(255,255,255,0.2); }
+    .contact-form .form-control { border-radius: 10px; border: 2px solid #e0e0e0; padding: 12px 16px; font-size: 0.9rem; transition: all 0.3s; }
+    .contact-form .form-control:focus { border-color: var(--saffron); box-shadow: 0 0 0 3px rgba(255,107,0,0.15); }
+    .btn-submit { background: linear-gradient(135deg, var(--saffron), var(--deep-maroon)); color: white; border: none; padding: 14px 40px; border-radius: 30px; font-weight: 700; font-size: 1rem; width: 100%; cursor: pointer; transition: all 0.3s; }
+    .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(255,107,0,0.4); }
+    .btn-apply { background: linear-gradient(135deg, var(--saffron), #ff4500); color: white; border: none; padding: 12px 25px; border-radius: 20px; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: all 0.3s; text-decoration: none; display: inline-block; margin-right: 10px; }
+    .btn-apply:hover { transform: scale(1.05); color: white; }
+    
+    .map-container { border-radius: 20px; overflow: hidden; border: 3px solid var(--saffron); box-shadow: 0 10px 30px rgba(0,0,0,0.1); height: 450px; margin-bottom: 70px; }
+
+    .timing-card { background: #f8f9fa; border-radius: 15px; padding: 25px; border: 1px solid #eee; height: 100%; }
+    .timing-row { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px dashed #ddd; font-weight: 600; }
+    .timing-row:last-child { border-bottom: none; }
+    .timing-time { color: var(--forest-green); }
+    .timing-time.closed { color: var(--deep-maroon); }
+
+    .accordion-item { border: 1px solid #e0e0e0; border-radius: 10px !important; margin-bottom: 10px; overflow: hidden; }
+    .accordion-button { font-weight: 700; color: var(--navy); font-size: 0.95rem; }
+    .accordion-button:not(.collapsed) { background-color: rgba(255, 107, 0, 0.08); color: var(--deep-maroon); box-shadow: inset 0 -1px 0 rgba(0,0,0,.125); }
+    .accordion-button:focus { box-shadow: none; }
+    .accordion-body { font-size: 0.9rem; color: #555; background: #fafafa; }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar Placeholder -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <h1>Contact Us</h1>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb justify-content-center mb-0 bg-transparent">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Contact</li>
+        </ol>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="section-eyebrow">Get In Touch</div>
+      <h2 class="section-title">Contact & Admission Enquiry</h2>
+      <div class="section-divider"></div>
+      
+      <div class="row g-5 mb-5">
+        <div class="col-lg-5">
+          <div class="contact-card">
+            <h4 style="font-weight:800;margin-bottom:25px;">📍 College Address</h4>
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div>
+                <div style="font-weight:700;margin-bottom:3px;">Main Campus</div>
+                <div style="font-size:0.85rem;opacity:0.8;">761-A, Nandana Patarsha, Ghatampur, Kanpur Nagar - 209206</div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fas fa-building"></i></div>
+              <div>
+                <div style="font-weight:700;margin-bottom:3px;">Head Office</div>
+                <div style="font-size:0.85rem;opacity:0.8;">33 W2 Juhi Kalan, Damodar Nagar, Kanpur</div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+              <div>
+                <div style="font-weight:700;margin-bottom:3px;">Phone Numbers</div>
+                <div style="font-size:0.9rem;">
+                  <a href="tel:9415067926" style="color:var(--gold);font-weight:700;text-decoration:none;">📱 9415067926</a><br>
+                  <a href="tel:9455616195" style="color:var(--gold);font-weight:700;text-decoration:none;">☎ 9455616195</a>
+                </div>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+              <div>
+                <div style="font-weight:700;margin-bottom:3px;">Email Address</div>
+                <a href="mailto:psrpgcollege@gmail.com" style="color:var(--gold);font-size:0.9rem;text-decoration:none;">psrpgcollege@gmail.com</a>
+              </div>
+            </div>
+            <div class="mt-4">
+              <a href="https://wa.me/919415067926" target="_blank" class="btn-apply" style="background:linear-gradient(135deg,#25D366,#128C7E);">
+                <i class="fab fa-whatsapp me-2"></i>Chat on WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div style="background:#f8f9fa;border-radius:20px;padding:35px;box-shadow: 0 10px 30px rgba(0,0,0,0.05);height:100%;">
+            <h4 style="font-weight:800;color:var(--navy);margin-bottom:25px;">📝 Send Us a Message</h4>
+            <form class="contact-form" onsubmit="handleSubmit(event)">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label style="font-weight:600;font-size:0.88rem;margin-bottom:6px;color:#444;">Full Name *</label>
+                  <input type="text" class="form-control" placeholder="अपना पूरा नाम लिखें" required>
+                </div>
+                <div class="col-md-6">
+                  <label style="font-weight:600;font-size:0.88rem;margin-bottom:6px;color:#444;">Mobile Number *</label>
+                  <input type="tel" class="form-control" placeholder="मोबाइल नंबर" required>
+                </div>
+                <div class="col-12">
+                  <label style="font-weight:600;font-size:0.88rem;margin-bottom:6px;color:#444;">Subject / Query Type *</label>
+                  <select class="form-control" required>
+                    <option value="">-- Select Query Type --</option>
+                    <option>Admission Enquiry (प्रवेश जानकारी)</option>
+                    <option>Fee Structure (फीस की जानकारी)</option>
+                    <option>General Enquiry (सामान्य जानकारी)</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label style="font-weight:600;font-size:0.88rem;margin-bottom:6px;color:#444;">Message / Your Question *</label>
+                  <textarea class="form-control" rows="4" placeholder="अपना सवाल या संदेश यहाँ लिखें..." required></textarea>
+                </div>
+                <div class="col-12 mt-4">
+                  <button type="submit" class="btn-submit">
+                    <i class="fas fa-paper-plane me-2"></i>Send Message
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+      <!-- TIMINGS & FAQ SECTION -->
+      <div class="row g-5 my-5">
+        <div class="col-lg-4">
+          <h4 style="font-weight:800;color:var(--navy);margin-bottom:25px;">🕒 Office Timings</h4>
+          <div class="timing-card">
+              <div class="timing-row">
+                  <span>Monday - Saturday</span>
+                  <span class="timing-time">10:00 AM - 04:00 PM</span>
+              </div>
+              <div class="timing-row">
+                  <span>Sunday</span>
+                  <span class="timing-time closed">Closed</span>
+              </div>
+              <p class="mt-3" style="font-size:0.85rem; color:#666;">Office remains closed on national holidays. Please call before visiting for any urgent work.</p>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <h4 style="font-weight:800;color:var(--navy);margin-bottom:25px;">❓ Frequently Asked Questions</h4>
+          <div class="accordion" id="faqAccordion">
+            <!-- FAQ Item 1 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  प्रवेश प्रक्रिया क्या है? (What is the admission process?)
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Admission is based on merit and university guidelines. Students need to fill the online admission form on our website and submit the required documents at the college office. For PG courses, university entrance test scores may be required.
+                </div>
+              </div>
+            </div>
+            <!-- FAQ Item 2 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  क्या कॉलेज में छात्रवृत्ति (Scholarship) की सुविधा है?
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  हाँ, उत्तर प्रदेश सरकार द्वारा प्रदान की जाने वाली सभी छात्रवृत्ति योजनाएं (जैसे SC/ST, OBC, Minority, EWS) हमारे कॉलेज में उपलब्ध हैं। छात्रों को ऑनलाइन आवेदन करना होता है और कॉलेज इसमें पूरी सहायता करता है।
+                </div>
+              </div>
+            </div>
+            <!-- FAQ Item 3 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                What documents are required for admission?
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  You will need your 10th and 12th marksheets, Transfer Certificate (TC), Character Certificate, Aadhar Card, passport-size photographs, and Caste/Income certificate if applicable.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MAP SECTION -->
+      <div class="map-container">
+        <iframe src="https://maps.google.com/maps?q=761-A,%20Nandana%20Patarsha,%20Ghatampur,%20Kanpur%20Nagar-209206&t=&z=14&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0; display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- Linked Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>

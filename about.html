@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Purshottam Sri Ram P.G. College</title>
+  <!-- CSS Links -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    .page-header {
+      background: linear-gradient(rgba(10, 31, 92, 0.85), rgba(10, 31, 92, 0.85)), url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center;
+      background-size: cover;
+      padding: 60px 0;
+      text-align: center;
+      color: white;
+    }
+    .page-header h1 {
+      font-weight: 800;
+      font-size: 2.8rem;
+    }
+    .breadcrumb-item a { color: var(--gold); text-decoration: none; }
+    .breadcrumb-item.active { color: rgba(255,255,255,0.8); }
+
+    .content-section { padding: 70px 0; }
+    
+    .principal-section {
+        background: white;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+    .principal-img {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 5px solid var(--saffron);
+        box-shadow: 0 8px 25px rgba(255,107,0,0.3);
+    }
+    
+    .vision-mission-card {
+        background: linear-gradient(135deg, var(--navy), var(--forest-green));
+        color: white;
+        padding: 30px;
+        border-radius: 15px;
+        height: 100%;
+        transition: all 0.4s ease;
+    }
+    .vision-mission-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(10, 31, 92, 0.4);
+    }
+    .vision-mission-card h3 {
+        color: var(--gold);
+        font-weight: 700;
+    }
+    .vision-mission-card ul {
+        list-style: none;
+        padding-left: 0;
+    }
+    .vision-mission-card ul li {
+        padding-left: 25px;
+        position: relative;
+        margin-bottom: 10px;
+    }
+    .vision-mission-card ul li::before {
+        content: '\f058'; /* Font Awesome check-circle */
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
+        color: var(--gold);
+        position: absolute;
+        left: 0;
+        top: 2px;
+    }
+    .section-eyebrow { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 3px; color: var(--saffron); font-weight: 700; }
+    
+    .committee-card {
+        background: white;
+        padding: 30px 20px;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        transition: all 0.3s ease;
+        height: 100%;
+    }
+    .committee-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+    .committee-img {
+        width: 130px; height: 130px; border-radius: 50%; object-fit: cover;
+        border: 4px solid var(--light-bg); box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar Placeholder -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <h1>About Our College</h1>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb justify-content-center mb-0 bg-transparent">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">About Us</li>
+        </ol>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main About Section -->
+  <section class="content-section bg-white">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <img src="https://images.unsplash.com/photo-1580582932707-520aed93a94d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" class="img-fluid rounded shadow">
+        </div>
+        <div class="col-lg-6">
+          <div class="section-eyebrow">हमारे बारे में</div>
+          <h2 style="color: var(--navy); font-weight: 800;">About <span style="color:var(--saffron);">PSRPGC</span></h2>
+          <p class="mt-3 text-secondary" style="line-height: 1.8;">
+            Purshottam Sri Ram P.G. College, Nandana-Ghatampur (KN-127) is a premier educational institution affiliated with 
+            Chhatrapati Shahu Ji Maharaj University (CSJM), Kanpur. Under the Shri Ram Group of Education, we are committed to 
+            providing quality higher education to students of Ghatampur and surrounding regions.
+          </p>
+          <p class="text-secondary" style="line-height: 1.8;">
+            हमारा लक्ष्य है — <strong style="color:var(--deep-maroon);">"सही शिक्षा, उज्जवल भविष्य की पहचान"</strong> — 
+            हर विद्यार्थी को उच्च गुणवत्ता की शिक्षा, कुशल शिक्षकों का मार्गदर्शन, और एक उज्जवल भविष्य प्रदान करना।
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Principal's Message Section -->
+  <section class="content-section" id="principal">
+    <div class="container">
+      <div class="principal-section">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-4 text-center">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=180&q=80" class="principal-img" alt="Principal Photo">
+          </div>
+          <div class="col-lg-8">
+            <h4 class="section-eyebrow">Principal's Message</h4>
+            <h2 style="color: var(--navy); font-weight: 800;">A Word From Our Leader</h2>
+            <p class="mt-3 text-secondary">Welcome to Purshottam Sri Ram P.G. College. We believe in nurturing talent and providing an environment where students can achieve their full potential. Our commitment is to offer not just academic knowledge, but also to instill values and skills that last a lifetime.</p>
+            <p class="text-secondary">We are proud of our dedicated faculty and the vibrant student community. Together, we strive for excellence in education and aim to contribute positively to society.</p>
+            <h5 class="mt-4" style="color: var(--deep-maroon); font-weight: 700;">Dr. [यहाँ प्रिंसिपल का असली नाम लिखें]</h5>
+            <p class="mb-0 text-muted">Principal, PSRPGC</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Management Committee Section -->
+  <section class="content-section bg-light" id="management">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="section-eyebrow">Leadership</div>
+        <h2 style="color: var(--navy); font-weight: 800;">Management <span style="color:var(--saffron);">Committee</span></h2>
+        <div style="width:60px;height:4px;background:linear-gradient(90deg,var(--saffron),var(--gold));border-radius:2px;margin:15px auto 0;"></div>
+      </div>
+      <div class="row g-4 justify-content-center">
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="committee-card">
+            <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" class="committee-img" alt="President">
+            <h5 class="mb-1" style="color: var(--navy); font-weight: 700;">[अध्यक्ष का नाम]</h5>
+            <p class="text-muted mb-0" style="font-size: 0.9rem;">President, SRGOE</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="committee-card">
+            <img src="https://images.unsplash.com/photo-1557862921-37829c790f19?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" class="committee-img" alt="Secretary">
+            <h5 class="mb-1" style="color: var(--navy); font-weight: 700;">[सचिव का नाम]</h5>
+            <p class="text-muted mb-0" style="font-size: 0.9rem;">Secretary, SRGOE</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="committee-card">
+            <img src="https://images.unsplash.com/photo-1627161683077-e34782ae2b71?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" class="committee-img" alt="Manager">
+            <h5 class="mb-1" style="color: var(--navy); font-weight: 700;">[प्रबंधक का नाम]</h5>
+            <p class="text-muted mb-0" style="font-size: 0.9rem;">Manager, PSRPGC</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Faculty Members Section -->
+  <section class="content-section bg-white" id="faculty">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="section-eyebrow">Our Experts</div>
+        <h2 style="color: var(--navy); font-weight: 800;">Faculty <span style="color:var(--saffron);">Members</span></h2>
+        <div style="width:60px;height:4px;background:linear-gradient(90deg,var(--saffron),var(--gold));border-radius:2px;margin:15px auto 0;"></div>
+      </div>
+      <div class="row g-4 justify-content-center">
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="committee-card">
+            <img src="https://images.unsplash.com/photo-1580894732444-8ec53c4a18dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" class="committee-img" alt="Faculty">
+            <h5 class="mb-1" style="color: var(--navy); font-weight: 700;">[शिक्षक का नाम]</h5>
+            <p class="text-muted mb-0" style="font-size: 0.9rem;">HOD, Science</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="committee-card">
+            <img src="https://images.unsplash.com/photo-1544717297-fa95b6ee9643?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" class="committee-img" alt="Faculty">
+            <h5 class="mb-1" style="color: var(--navy); font-weight: 700;">[शिक्षक का नाम]</h5>
+            <p class="text-muted mb-0" style="font-size: 0.9rem;">Professor, Arts</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="committee-card">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" class="committee-img" alt="Faculty">
+            <h5 class="mb-1" style="color: var(--navy); font-weight: 700;">[शिक्षक का नाम]</h5>
+            <p class="text-muted mb-0" style="font-size: 0.9rem;">Asst. Professor, Commerce</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 text-center">
+          <div class="committee-card">
+            <img src="https://images.unsplash.com/photo-1543269664-76bc3997d9ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80" class="committee-img" alt="Faculty">
+            <h5 class="mb-1" style="color: var(--navy); font-weight: 700;">[शिक्षक का नाम]</h5>
+            <p class="text-muted mb-0" style="font-size: 0.9rem;">Lecturer, Computer Science</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision & Mission Section -->
+  <section class="content-section" id="vision">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="vision-mission-card">
+            <h3><i class="fas fa-eye me-2"></i>Our Vision</h3>
+            <p class="mt-3 opacity-75">To be a leading institution in higher education, recognized for its commitment to academic excellence, research, and the holistic development of students, empowering them to become responsible global citizens.</p>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="vision-mission-card">
+            <h3><i class="fas fa-bullseye me-2"></i>Our Mission</h3>
+            <ul class="mt-3 opacity-75">
+              <li>To provide quality and affordable education to all sections of society.</li>
+              <li>To foster a culture of inquiry, innovation, and lifelong learning.</li>
+              <li>To develop professional skills and ethical values among students.</li>
+              <li>To contribute to community development through outreach and extension activities.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>

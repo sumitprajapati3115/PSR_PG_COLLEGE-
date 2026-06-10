@@ -7,282 +7,9 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css">
   <style>
-    :root {
-      --saffron: #FF6B00;
-      --deep-maroon: #8B0000;
-      --forest-green: #1a6b2a;
-      --light-green: #3ab54a;
-      --gold: #D4A017;
-      --navy: #0a1f5c;
-      --white: #ffffff;
-      --light-bg: #f8f9fa;
-      --text-dark: #1a1a1a;
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: 'Poppins', 'Hind', sans-serif;
-      overflow-x: hidden;
-    }
-
-    /* ===== TOP BAR ===== */
-    .top-bar {
-      background: linear-gradient(90deg, var(--navy) 0%, var(--deep-maroon) 100%);
-      padding: 6px 0;
-      font-size: 13px;
-      color: #fff;
-    }
-    .top-bar a { color: #ffd700; text-decoration: none; }
-    .top-bar .marquee-text { animation: marquee 20s linear infinite; white-space: nowrap; display: inline-block; }
-    @keyframes marquee { 0% { transform: translateX(100vw); } 100% { transform: translateX(-100%); } }
-
-    /* ===== HEADER ===== */
-    .college-header {
-      background: linear-gradient(135deg, #fff 0%, #fff8f0 100%);
-      padding: 12px 0;
-      border-bottom: 4px solid var(--saffron);
-      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-    }
-    .college-header .college-logo {
-      width: 110px;
-      height: auto;
-      object-fit: contain;
-    }
-    .college-name-en {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--deep-maroon);
-      line-height: 1.2;
-    }
-    .college-name-hi {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--forest-green);
-    }
-    .college-sub {
-      font-size: 0.8rem;
-      color: #666;
-    }
-    .admission-badge {
-      background: linear-gradient(135deg, var(--saffron), #ff4500);
-      color: white;
-      padding: 8px 18px;
-      border-radius: 25px;
-      font-weight: 700;
-      font-size: 0.85rem;
-      animation: pulse-badge 2s infinite;
-      box-shadow: 0 4px 15px rgba(255,107,0,0.4);
-      text-align: center;
-    }
-    @keyframes pulse-badge {
-      0%, 100% { transform: scale(1); box-shadow: 0 4px 15px rgba(255,107,0,0.4); }
-      50% { transform: scale(1.05); box-shadow: 0 6px 25px rgba(255,107,0,0.6); }
-    }
-
-    /* ===== NAVBAR ===== */
-    .main-navbar {
-      background: linear-gradient(90deg, #071540 0%, #0a1f5c 60%, #0d3320 100%);
-      padding: 0;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-      border-bottom: 3px solid var(--gold);
-    }
-
-    /* Desktop brand hidden, shown on mobile */
-    .main-navbar .navbar-brand {
-      display: none;
-      color: white !important;
-      font-weight: 800;
-      font-size: 1rem;
-      letter-spacing: 1px;
-    }
-
-    /* Nav items */
-    .main-navbar .navbar-nav { gap: 0; }
-
-    .main-navbar .nav-item { position: relative; }
-
-    .main-navbar .nav-link {
-      color: rgba(255,255,255,0.92) !important;
-      font-weight: 600;
-      font-size: 0.82rem;
-      padding: 16px 12px !important;
-      text-transform: uppercase;
-      letter-spacing: 0.6px;
-      white-space: nowrap;
-      position: relative;
-      transition: color 0.25s, background 0.25s;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    /* Gold underline slide-in */
-    .main-navbar .nav-link::before {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 50%;
-      width: 0; height: 3px;
-      background: var(--gold);
-      border-radius: 2px 2px 0 0;
-      transition: width 0.3s ease, left 0.3s ease;
-    }
-    .main-navbar .nav-link:hover::before,
-    .main-navbar .nav-link.active::before {
-      width: 100%;
-      left: 0;
-    }
-    .main-navbar .nav-link:hover,
-    .main-navbar .nav-link.active {
-      color: var(--gold) !important;
-      background: rgba(255,255,255,0.06);
-    }
-
-    /* Dropdown caret smaller */
-    .main-navbar .dropdown-toggle::after {
-      font-size: 0.7rem;
-      margin-left: 4px;
-      vertical-align: middle;
-    }
-
-    /* Dropdown menu */
-    .main-navbar .dropdown-menu {
-      background: #0d1e50;
-      border: none;
-      border-top: 3px solid var(--gold);
-      border-radius: 0 0 10px 10px;
-      box-shadow: 0 12px 35px rgba(0,0,0,0.45);
-      min-width: 230px;
-      padding: 6px 0;
-      margin-top: 0 !important;
-      /* Smooth dropdown animation */
-      animation: dropDown 0.2s ease forwards;
-    }
-    @keyframes dropDown {
-      from { opacity: 0; transform: translateY(-8px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    .main-navbar .dropdown-item {
-      color: rgba(200,215,235,0.9);
-      font-size: 0.83rem;
-      font-weight: 500;
-      padding: 10px 18px;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-      transition: all 0.2s;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .main-navbar .dropdown-item:last-child { border-bottom: none; }
-    .main-navbar .dropdown-item i {
-      color: var(--gold);
-      font-size: 0.7rem;
-      width: 12px;
-      flex-shrink: 0;
-      transition: transform 0.2s;
-    }
-    .main-navbar .dropdown-item:hover {
-      background: rgba(255,255,255,0.09);
-      color: white;
-      padding-left: 24px;
-    }
-    .main-navbar .dropdown-item:hover i { transform: translateX(3px); }
-
-    /* Call Now button in navbar */
-    .navbar-call-btn {
-      background: linear-gradient(135deg, var(--saffron), #e55000);
-      color: white !important;
-      border: none;
-      padding: 9px 20px !important;
-      border-radius: 25px !important;
-      font-weight: 700 !important;
-      font-size: 0.82rem !important;
-      white-space: nowrap;
-      transition: all 0.3s !important;
-      box-shadow: 0 3px 12px rgba(255,107,0,0.35);
-      text-transform: none !important;
-      letter-spacing: 0 !important;
-      margin-left: 8px;
-    }
-    .navbar-call-btn::before { display: none !important; }
-    .navbar-call-btn:hover {
-      background: linear-gradient(135deg, #ff8800, var(--saffron)) !important;
-      color: white !important;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(255,107,0,0.5);
-    }
-
-    /* Hamburger toggler */
-    .main-navbar .navbar-toggler {
-      border: 2px solid rgba(255,255,255,0.35);
-      border-radius: 8px;
-      padding: 6px 10px;
-      transition: all 0.3s;
-    }
-    .main-navbar .navbar-toggler:hover {
-      border-color: var(--gold);
-      background: rgba(255,255,255,0.08);
-    }
-    .main-navbar .navbar-toggler:focus { box-shadow: none; }
-    .main-navbar .navbar-toggler-icon {
-      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255,215,0,0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2.5' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-    }
-
-    /* Mobile menu styles */
-    @media (max-width: 991px) {
-      .main-navbar .navbar-brand { display: block; }
-      .main-navbar .navbar-collapse {
-        background: #071540;
-        border-top: 2px solid var(--gold);
-        padding: 10px 0 15px;
-        margin-top: 2px;
-      }
-      .main-navbar .nav-link {
-        padding: 12px 20px !important;
-        border-bottom: 1px solid rgba(255,255,255,0.06);
-        font-size: 0.88rem !important;
-      }
-      .main-navbar .nav-link::before { display: none; }
-      .main-navbar .nav-link:hover,
-      .main-navbar .nav-link.active {
-        background: rgba(255,215,0,0.1);
-        padding-left: 28px !important;
-        border-left: 3px solid var(--gold);
-      }
-      .main-navbar .dropdown-menu {
-        background: rgba(255,255,255,0.04);
-        border-top: none;
-        border-left: 3px solid var(--gold);
-        border-radius: 0;
-        box-shadow: none;
-        padding: 0;
-        margin-left: 20px;
-        animation: none;
-      }
-      .main-navbar .dropdown-item {
-        padding: 9px 16px;
-        font-size: 0.82rem;
-        color: rgba(180,200,220,0.9);
-      }
-      .main-navbar .dropdown-item:hover {
-        padding-left: 22px;
-        background: rgba(255,215,0,0.08);
-        color: var(--gold);
-      }
-      .navbar-call-btn {
-        margin: 10px 20px 0 !important;
-        display: block;
-        text-align: center;
-        padding: 11px 20px !important;
-        border-radius: 8px !important;
-      }
-    }
-
     /* ===== HERO SLIDER ===== */
     .hero-section {
       position: relative;
@@ -765,58 +492,6 @@
     }
     .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(255,107,0,0.4); }
 
-    /* ===== FOOTER ===== */
-    footer {
-      background: linear-gradient(180deg, #06102b 0%, #020812 100%);
-      color: #aab;
-      padding: 60px 0 0;
-    }
-    footer h5 {
-      color: white;
-      font-weight: 700;
-      margin-bottom: 20px;
-      position: relative;
-      padding-bottom: 12px;
-    }
-    footer h5::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0;
-      width: 40px; height: 3px;
-      background: var(--saffron);
-      border-radius: 2px;
-    }
-    footer a { color: #99aab5; text-decoration: none; font-size: 0.88rem; transition: color 0.2s; }
-    footer a:hover { color: var(--gold); }
-    footer ul { list-style: none; padding: 0; }
-    footer ul li { margin-bottom: 10px; }
-    footer ul li i { color: var(--saffron); margin-right: 8px; font-size: 0.75rem; }
-    .footer-bottom {
-      background: rgba(0,0,0,0.4);
-      padding: 15px 0;
-      margin-top: 40px;
-      text-align: center;
-      font-size: 0.82rem;
-    }
-    .footer-logo { width: 70px; margin-bottom: 15px; }
-    .social-links a {
-      display: inline-flex;
-      width: 38px; height: 38px;
-      background: rgba(255,255,255,0.08);
-      border-radius: 50%;
-      align-items: center;
-      justify-content: center;
-      color: #aab !important;
-      margin-right: 8px;
-      transition: all 0.3s;
-      font-size: 0.9rem;
-    }
-    .social-links a:hover {
-      background: var(--saffron);
-      color: white !important;
-      transform: translateY(-3px);
-    }
-
     /* ===== FLOATING APPLY BUTTON ===== */
     .float-apply {
       position: fixed;
@@ -890,11 +565,6 @@
       .hero-image-col { display: none; }
       .hero-stats { gap: 12px; flex-wrap: wrap; }
       .hero-stat { padding: 8px 12px; }
-      .college-name-en { font-size: 1.1rem; }
-      .college-name-hi { font-size: 0.95rem; }
-      .college-header .college-logo { width: 85px; }
-      .admission-badge { font-size: 0.75rem; padding: 6px 12px; }
-      /* navbar handled in navbar block above */
       .contact-card { padding: 25px 20px; }
     }
 
@@ -925,167 +595,17 @@
 </head>
 <body>
 
-<!-- TOP BAR -->
-<div class="top-bar">
-  <div class="container">
-    <div class="d-flex justify-content-between align-items-center">
-      <div class="overflow-hidden flex-grow-1 me-3">
-        <span class="marquee-text">
-          🎓 Admission Open Session 2026-27 | All courses affiliated with CSJM University Kanpur | Code: KN127 | 
-          M.Sc. (Math, Physics, Chemistry, Zoology, Botany) | M.A. (Education, Sociology, Hindi, English, Economics) | 
-          B.Sc. IT | BCA | B.Lib | B.Ed | Contact: 9415067926
-        </span>
-      </div>
-      <div class="d-flex gap-3 flex-shrink-0">
-        <a href="tel:9415067926"><i class="fas fa-phone-alt me-1"></i>9415067926</a>
-        <a href="mailto:psrpgcollege@gmail.com" class="d-none d-md-block"><i class="fas fa-envelope me-1"></i>Email Us</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- HEADER -->
-<div class="college-header">
-  <div class="container">
-    <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
-      <div class="d-flex align-items-center gap-3">
-        <!-- College Logo -->
-        <img src="image/logo.png" alt="PSR PG College Logo" class="college-logo flex-shrink-0">
-        <div>
-          <div class="college-name-en">Purshottam Sri Ram P.G. College</div>
-          <div class="college-name-hi">पुरुषोत्तम श्री राम पी.जी. कॉलेज</div>
-          <div class="college-sub">
-            <i class="fas fa-map-marker-alt text-danger me-1"></i>Nandana-Ghatampur, Kanpur Nagar-209206
-            <span class="ms-2 badge" style="background:var(--forest-green);font-size:0.7rem;">CSJM Affiliated</span>
-            <span class="ms-1 badge" style="background:var(--navy);font-size:0.7rem;">Code: KN127</span>
-          </div>
-        </div>
-      </div>
-      <div class="text-end">
-        <div class="admission-badge">
-          🎓 ADMISSION OPEN<br>
-          <span style="font-size:1.1rem;">2026-27</span><br>
-          <small style="font-size:0.7rem;opacity:0.9;">Session Starting Now</small>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- MAIN NAVBAR -->
-<nav class="main-navbar navbar navbar-expand-lg">
-  <div class="container-fluid px-3 px-lg-4">
-
-    <!-- Mobile: Logo + Toggler -->
-    <a class="navbar-brand" href="#home">
-      <span style="color:var(--gold);">PSR</span> PG College
-    </a>
-    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="mainNav">
-      <ul class="navbar-nav mx-auto align-items-lg-center">
-
-        <li class="nav-item">
-          <a class="nav-link active" href="#home">
-            <i class="fas fa-home"></i> Home
-          </a>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="true">
-            <i class="fas fa-university"></i> About Us
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#about"><i class="fas fa-chevron-right"></i>About College</a></li>
-            <li><a class="dropdown-item" href="#"><i class="fas fa-chevron-right"></i>Vision &amp; Mission</a></li>
-            <li><a class="dropdown-item" href="#"><i class="fas fa-chevron-right"></i>Principal's Message</a></li>
-            <li><a class="dropdown-item" href="#"><i class="fas fa-chevron-right"></i>Management Committee</a></li>
-            <li><a class="dropdown-item" href="#"><i class="fas fa-chevron-right"></i>Faculty Members</a></li>
-          </ul>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="true">
-            <i class="fas fa-graduation-cap"></i> Courses
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#courses"><i class="fas fa-chevron-right"></i>UG — B.Sc. / B.A. / B.Com</a></li>
-            <li><a class="dropdown-item" href="#courses"><i class="fas fa-chevron-right"></i>PG — M.Sc. &amp; M.A.</a></li>
-            <li><a class="dropdown-item" href="#courses"><i class="fas fa-chevron-right"></i>B.Sc. (IT)</a></li>
-            <li><a class="dropdown-item" href="#courses"><i class="fas fa-chevron-right"></i>BCA</a></li>
-            <li><a class="dropdown-item" href="#courses"><i class="fas fa-chevron-right"></i>B.Lib — Library Science</a></li>
-            <li><a class="dropdown-item" href="#courses"><i class="fas fa-chevron-right"></i>B.Ed — Education</a></li>
-          </ul>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="true">
-            <i class="fas fa-door-open"></i> Admissions
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#contact"><i class="fas fa-chevron-right"></i>How to Apply</a></li>
-            <li><a class="dropdown-item" href="#"><i class="fas fa-chevron-right"></i>Admission Form</a></li>
-            <li><a class="dropdown-item" href="#"><i class="fas fa-chevron-right"></i>Eligibility Criteria</a></li>
-            <li><a class="dropdown-item" href="#"><i class="fas fa-chevron-right"></i>Fee Structure</a></li>
-            <li><a class="dropdown-item" href="#"><i class="fas fa-chevron-right"></i>Scholarship Info</a></li>
-          </ul>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="true">
-            <i class="fas fa-building"></i> Facilities
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#facilities"><i class="fas fa-chevron-right"></i>Library</a></li>
-            <li><a class="dropdown-item" href="#facilities"><i class="fas fa-chevron-right"></i>Science Laboratories</a></li>
-            <li><a class="dropdown-item" href="#facilities"><i class="fas fa-chevron-right"></i>Computer Lab</a></li>
-            <li><a class="dropdown-item" href="#facilities"><i class="fas fa-chevron-right"></i>Sports Ground</a></li>
-            <li><a class="dropdown-item" href="#facilities"><i class="fas fa-chevron-right"></i>Hostel</a></li>
-          </ul>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="true">
-            <i class="fas fa-book-open"></i> Academics
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#"><i class="fas fa-chevron-right"></i>Academic Calendar</a></li>
-            <li><a class="dropdown-item" href="#"><i class="fas fa-chevron-right"></i>Exam Schedule</a></li>
-            <li><a class="dropdown-item" href="#"><i class="fas fa-chevron-right"></i>Results / Marksheet</a></li>
-            <li><a class="dropdown-item" href="#"><i class="fas fa-chevron-right"></i>Syllabus Download</a></li>
-            <li><a class="dropdown-item" href="#"><i class="fas fa-chevron-right"></i>Study Material</a></li>
-          </ul>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="#gallery"><i class="fas fa-images"></i> Gallery</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="#contact"><i class="fas fa-envelope"></i> Contact</a>
-        </li>
-
-      </ul>
-
-      <!-- Call Now Button -->
-      <a href="tel:9415067926" class="nav-link navbar-call-btn">
-        <i class="fas fa-phone-alt me-1"></i> 9415067926
-      </a>
-
-    </div>
-  </div>
-</nav>
+<!-- Linked Navbar -->
+<div id="navbar-placeholder"></div>
 
 <!-- HERO SECTION -->
 <section class="hero-section" id="home">
   <canvas id="particleCanvas"></canvas>
   <div id="heroCarousel" class="carousel slide h-100" data-bs-ride="carousel" data-bs-interval="5000">
     <div class="carousel-indicators">
-      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
-      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
-      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
     <div class="carousel-inner h-100">
       <!-- Slide 1 -->
@@ -1674,43 +1194,37 @@
       <h2 class="section-title">Photo Gallery</h2>
       <div class="section-divider"></div>
     </div>
-    <div class="row g-3">
-      <div class="col-6 col-md-4">
-        <div class="gallery-item">
-          <div style="width:100%;height:200px;background:linear-gradient(135deg,var(--navy),var(--forest-green));display:flex;align-items:center;justify-content:center;color:white;font-size:3rem;">🏛️</div>
-          <div class="gallery-overlay"><span style="color:white;font-weight:600;font-size:0.9rem;">College Building</span></div>
-        </div>
+    <div class="row g-4" id="home-gallery-grid">
+      <div class="col-lg-4 col-md-6">
+        <a href="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" class="gallery-item" data-caption="College Main Building">
+          <img src="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Main Building">
+          <div class="gallery-overlay">
+            <i class="fas fa-search-plus gallery-overlay-icon"></i>
+            <div class="gallery-title">College Main Building</div>
+          </div>
+        </a>
       </div>
-      <div class="col-6 col-md-4">
-        <div class="gallery-item">
-          <div style="width:100%;height:200px;background:linear-gradient(135deg,var(--deep-maroon),var(--saffron));display:flex;align-items:center;justify-content:center;color:white;font-size:3rem;">🔬</div>
-          <div class="gallery-overlay"><span style="color:white;font-weight:600;font-size:0.9rem;">Science Laboratory</span></div>
-        </div>
+      <div class="col-lg-4 col-md-6">
+        <a href="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" class="gallery-item" data-caption="Advanced Science Lab">
+          <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Science Lab">
+          <div class="gallery-overlay">
+            <i class="fas fa-search-plus gallery-overlay-icon"></i>
+            <div class="gallery-title">Advanced Science Lab</div>
+          </div>
+        </a>
       </div>
-      <div class="col-6 col-md-4">
-        <div class="gallery-item">
-          <div style="width:100%;height:200px;background:linear-gradient(135deg,var(--forest-green),var(--navy));display:flex;align-items:center;justify-content:center;color:white;font-size:3rem;">💻</div>
-          <div class="gallery-overlay"><span style="color:white;font-weight:600;font-size:0.9rem;">Computer Lab</span></div>
-        </div>
+      <div class="col-lg-4 col-md-6">
+        <a href="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" class="gallery-item" data-caption="Modern IT Center">
+          <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Computer Lab">
+          <div class="gallery-overlay">
+            <i class="fas fa-search-plus gallery-overlay-icon"></i>
+            <div class="gallery-title">Modern IT Center</div>
+          </div>
+        </a>
       </div>
-      <div class="col-6 col-md-4">
-        <div class="gallery-item">
-          <div style="width:100%;height:200px;background:linear-gradient(135deg,#4a0080,var(--navy));display:flex;align-items:center;justify-content:center;color:white;font-size:3rem;">📚</div>
-          <div class="gallery-overlay"><span style="color:white;font-weight:600;font-size:0.9rem;">Library</span></div>
-        </div>
-      </div>
-      <div class="col-6 col-md-4">
-        <div class="gallery-item">
-          <div style="width:100%;height:200px;background:linear-gradient(135deg,var(--saffron),#ff4500);display:flex;align-items:center;justify-content:center;color:white;font-size:3rem;">🎓</div>
-          <div class="gallery-overlay"><span style="color:white;font-weight:600;font-size:0.9rem;">Convocation</span></div>
-        </div>
-      </div>
-      <div class="col-6 col-md-4">
-        <div class="gallery-item">
-          <div style="width:100%;height:200px;background:linear-gradient(135deg,var(--gold),var(--saffron));display:flex;align-items:center;justify-content:center;color:white;font-size:3rem;">🏃</div>
-          <div class="gallery-overlay"><span style="color:white;font-weight:600;font-size:0.9rem;">Sports Events</span></div>
-        </div>
-      </div>
+    </div>
+    <div class="text-center mt-5">
+      <a href="gallery.html" class="btn-hero-primary" style="padding: 12px 30px;">View Full Gallery <i class="fas fa-arrow-right ms-2"></i></a>
     </div>
   </div>
 </section>
@@ -1821,83 +1335,8 @@
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="container">
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:15px;">
-          <div style="width:55px;height:55px;border-radius:50%;background:linear-gradient(135deg,var(--deep-maroon),var(--forest-green));display:flex;align-items:center;justify-content:center;color:white;font-weight:900;font-size:0.9rem;">PSR</div>
-          <div>
-            <div style="color:white;font-weight:800;font-size:0.95rem;">Purshottam Sri Ram</div>
-            <div style="font-size:0.78rem;color:var(--gold);">P.G. College, Nandana</div>
-          </div>
-        </div>
-        <p style="font-size:0.85rem;line-height:1.7;margin-bottom:15px;">CSJM University affiliated college dedicated to providing quality education. Under Shri Ram Group of Education (SRGOE).</p>
-        <p style="font-size:0.82rem;color:var(--gold);font-weight:600;font-style:italic;">"सही शिक्षा, उज्जवल भविष्य की पहचान!"</p>
-        <div class="social-links mt-3">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="#"><i class="fab fa-whatsapp"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-        </div>
-      </div>
-      <div class="col-md-2">
-        <h5>Quick Links</h5>
-        <ul>
-          <li><a href="#home"><i class="fas fa-angle-right"></i>Home</a></li>
-          <li><a href="#about"><i class="fas fa-angle-right"></i>About Us</a></li>
-          <li><a href="#courses"><i class="fas fa-angle-right"></i>Courses</a></li>
-          <li><a href="#facilities"><i class="fas fa-angle-right"></i>Facilities</a></li>
-          <li><a href="#gallery"><i class="fas fa-angle-right"></i>Gallery</a></li>
-          <li><a href="#contact"><i class="fas fa-angle-right"></i>Contact</a></li>
-        </ul>
-      </div>
-      <div class="col-md-3">
-        <h5>Our Courses</h5>
-        <ul>
-          <li><a href="#courses"><i class="fas fa-angle-right"></i>B.Sc. | B.A. | B.Com</a></li>
-          <li><a href="#courses"><i class="fas fa-angle-right"></i>M.Sc. (5 Subjects)</a></li>
-          <li><a href="#courses"><i class="fas fa-angle-right"></i>M.A. (5 Subjects)</a></li>
-          <li><a href="#courses"><i class="fas fa-angle-right"></i>BCA</a></li>
-          <li><a href="#courses"><i class="fas fa-angle-right"></i>B.Sc. IT</a></li>
-          <li><a href="#courses"><i class="fas fa-angle-right"></i>B.Lib | B.Ed</a></li>
-        </ul>
-      </div>
-      <div class="col-md-3">
-        <h5>Contact Info</h5>
-        <ul>
-          <li style="font-size:0.85rem;margin-bottom:12px;color:#aab;">
-            <i class="fas fa-map-marker-alt" style="color:var(--saffron);margin-right:8px;"></i>
-            761-A, Nandana Patarsha, Ghatampur, Kanpur Nagar-209206
-          </li>
-          <li>
-            <a href="tel:9415067926"><i class="fas fa-phone-alt"></i>9415067926</a>
-          </li>
-          <li>
-            <a href="tel:9455616195"><i class="fas fa-phone"></i>9455616195</a>
-          </li>
-          <li>
-            <a href="mailto:psrpgcollege@gmail.com"><i class="fas fa-envelope"></i>psrpgcollege@gmail.com</a>
-          </li>
-        </ul>
-        <div style="margin-top:15px;background:rgba(255,107,0,0.15);border:1px solid rgba(255,107,0,0.3);border-radius:10px;padding:12px;text-align:center;">
-          <div style="color:var(--gold);font-weight:700;font-size:0.9rem;">College Code</div>
-          <div style="color:white;font-size:1.5rem;font-weight:900;">KN127</div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <div class="container">
-      <p style="margin:0;color:#667;">
-        © 2026 Purshottam Sri Ram P.G. College, Nandana-Ghatampur | 
-        Developed for <span style="color:var(--gold);">SRGOE</span> | 
-        CSJM University Affiliated | Code: KN127
-      </p>
-    </div>
-  </div>
-</footer>
+<!-- Linked Footer -->
+<div id="footer-placeholder"></div>
 
 <!-- FLOATING BUTTONS -->
 <a href="#contact" class="float-apply">
@@ -1911,7 +1350,11 @@
   <i class="fas fa-arrow-up"></i>
 </button>
 
+<script>
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js"></script>
 <script>
   // ===== PARTICLE CANVAS =====
   const canvas = document.getElementById('particleCanvas');
@@ -2019,24 +1462,6 @@
     }, 4000);
   }
 
-  // ===== SMOOTH SCROLL =====
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', function(e) {
-      const href = this.getAttribute('href');
-      if (href === '#') return;
-      const target = document.querySelector(href);
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        // close mobile nav
-        const nav = document.querySelector('.navbar-collapse');
-        if (nav.classList.contains('show')) {
-          bootstrap.Collapse.getInstance(nav)?.hide();
-        }
-      }
-    });
-  });
-
   // ===== ACTIVE NAV ON SCROLL =====
   window.addEventListener('scroll', () => {
     const sections = ['home','about','courses','facilities','gallery','contact'];
@@ -2046,15 +1471,22 @@
       if (el) {
         const top = el.offsetTop;
         const bottom = top + el.offsetHeight;
-        const link = document.querySelector(`.nav-link[href="#${id}"]`);
+        const link = document.querySelector(`.main-navbar a[href="index.html#${id}"]`);
         if (link) {
           if (scrollPos >= top && scrollPos < bottom) {
             document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-            link.classList.add('active');
+            const navLink = link.closest('.nav-item').querySelector('.nav-link');
+            if (navLink) navLink.classList.add('active');
           }
         }
       }
     });
+  });
+
+  // ===== INITIALIZE LIGHTBOX =====
+  baguetteBox.run('#home-gallery-grid', {
+    // This filter ensures that only valid image links are included in the gallery
+    filter: /https/
   });
 </script>
 </body>

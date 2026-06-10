@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photo Gallery - Purshottam Sri Ram P.G. College</title>
+  <!-- CSS Links -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.css">
+  
+  <style>
+    .page-header {
+      background: linear-gradient(rgba(10, 31, 92, 0.85), rgba(10, 31, 92, 0.85)), url('https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center;
+      background-size: cover;
+      padding: 60px 0;
+      text-align: center;
+      color: white;
+    }
+    .page-header h1 { font-weight: 800; font-size: 2.8rem; }
+    .breadcrumb-item a { color: var(--gold); text-decoration: none; }
+    .breadcrumb-item.active { color: rgba(255,255,255,0.8); }
+
+    .gallery-section { padding: 70px 0; background: #f8f9fa; min-height: 600px; }
+    
+    /* Filter Buttons */
+    .gallery-filter { text-align: center; margin-bottom: 40px; }
+    .filter-btn {
+      background: transparent;
+      border: 2px solid var(--saffron);
+      padding: 8px 25px;
+      border-radius: 30px;
+      margin: 5px;
+      color: var(--navy);
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--saffron);
+      color: white;
+      box-shadow: 0 5px 15px rgba(255,107,0,0.3);
+    }
+
+    /* Gallery Items */
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      margin-bottom: 24px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+      cursor: pointer;
+      background: #fff;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+    .gallery-overlay {
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: linear-gradient(to top, rgba(10,31,92,0.9), rgba(10,31,92,0.4));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      color: white;
+    }
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+    .gallery-overlay-icon {
+      font-size: 2.5rem;
+      color: var(--gold);
+      transform: translateY(20px);
+      transition: transform 0.3s ease;
+      margin-bottom: 10px;
+    }
+    .gallery-item:hover .gallery-overlay-icon {
+      transform: translateY(0);
+    }
+    .gallery-title {
+      font-weight: 700;
+      font-size: 1.1rem;
+      transform: translateY(20px);
+      transition: transform 0.3s ease;
+      transition-delay: 0.1s;
+    }
+    .gallery-item:hover .gallery-title {
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar Placeholder -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <h1>Campus Gallery</h1>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb justify-content-center mb-0 bg-transparent">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Gallery</li>
+        </ol>
+      </nav>
+    </div>
+  </header>
+
+  <!-- GALLERY SECTION -->
+  <section class="gallery-section">
+    <div class="container">
+      
+      <!-- Filter Buttons -->
+      <div class="gallery-filter">
+        <button class="filter-btn active" onclick="filterGallery('all', this)">All Photos</button>
+        <button class="filter-btn" onclick="filterGallery('campus', this)">Campus</button>
+        <button class="filter-btn" onclick="filterGallery('events', this)">Events & Sports</button>
+        <button class="filter-btn" onclick="filterGallery('labs', this)">Labs & Library</button>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="row" id="gallery-grid">
+        
+        <!-- Item 1: Campus -->
+        <div class="col-lg-4 col-md-6 gallery-box campus">
+          <a href="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" class="gallery-item" data-caption="College Main Building">
+            <img src="https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Main Building">
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus gallery-overlay-icon"></i>
+              <div class="gallery-title">College Main Building</div>
+            </div>
+          </a>
+        </div>
+        
+        <!-- Item 2: Labs -->
+        <div class="col-lg-4 col-md-6 gallery-box labs">
+          <a href="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" class="gallery-item" data-caption="Advanced Science Lab">
+            <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Science Lab">
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus gallery-overlay-icon"></i>
+              <div class="gallery-title">Advanced Science Lab</div>
+            </div>
+          </a>
+        </div>
+        
+        <!-- Item 3: Events -->
+        <div class="col-lg-4 col-md-6 gallery-box events">
+          <a href="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" class="gallery-item" data-caption="Annual Sports Meet">
+            <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Sports Day">
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus gallery-overlay-icon"></i>
+              <div class="gallery-title">Annual Sports Meet</div>
+            </div>
+          </a>
+        </div>
+        
+        <!-- Item 4: Labs -->
+        <div class="col-lg-4 col-md-6 gallery-box labs">
+          <a href="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" class="gallery-item" data-caption="Modern IT Center">
+            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Computer Lab">
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus gallery-overlay-icon"></i>
+              <div class="gallery-title">Modern IT Center</div>
+            </div>
+          </a>
+        </div>
+        
+        <!-- Item 5: Events -->
+        <div class="col-lg-4 col-md-6 gallery-box events">
+          <a href="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" class="gallery-item" data-caption="Convocation Ceremony">
+            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Convocation">
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus gallery-overlay-icon"></i>
+              <div class="gallery-title">Convocation Ceremony</div>
+            </div>
+          </a>
+        </div>
+        
+        <!-- Item 6: Campus -->
+        <div class="col-lg-4 col-md-6 gallery-box campus">
+          <a href="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" class="gallery-item" data-caption="Green Campus">
+            <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Campus Garden">
+            <div class="gallery-overlay">
+              <i class="fas fa-search-plus gallery-overlay-icon"></i>
+              <div class="gallery-title">Green Campus</div>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Linked Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.11.1/baguetteBox.min.js"></script>
+  <script>
+    // Simple Gallery Filter Script
+    function filterGallery(category, btnElement) {
+      // Update active button
+      const buttons = document.querySelectorAll('.filter-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      btnElement.classList.add('active');
+
+      // Filter images
+      const items = document.querySelectorAll('.gallery-box');
+      items.forEach(item => {
+        const link = item.querySelector('a');
+        if (category === 'all' || item.classList.contains(category)) {
+          item.style.display = '';
+          // Restore the original href if it was stored
+          if (link.dataset.originalHref) {
+            link.href = link.dataset.originalHref;
+            link.removeAttribute('data-original-href');
+          }
+        } else {
+          item.style.display = 'none';
+          // Store the original href and set it to something that won't match the filter
+          if (!link.dataset.originalHref) {
+            link.dataset.originalHref = link.href;
+          }
+          link.href = '#';
+        }
+      });
+    }
+
+    // Initialize Lightbox
+    baguetteBox.run('#gallery-grid', {
+      // This filter ensures that only valid image links are included in the gallery
+      filter: /https/ 
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admission Form - Purshottam Sri Ram P.G. College</title>
+  <!-- Reusing styles from index.html -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .form-section {
+      padding: 80px 0;
+    }
+    .form-container {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+      border-top: 5px solid var(--saffron);
+    }
+    .form-title {
+      color: var(--navy);
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .form-subtitle {
+      text-align: center;
+      color: #666;
+      margin-bottom: 30px;
+    }
+    .form-container fieldset {
+      border: 2px solid #e0e0e0;
+      border-radius: 12px;
+      padding: 25px;
+      margin-bottom: 30px;
+      position: relative;
+    }
+    .form-container legend {
+      float: none;
+      width: auto;
+      padding: 5px 20px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: white;
+      background: linear-gradient(135deg, var(--navy), var(--forest-green));
+      border-radius: 8px;
+      margin-left: 15px;
+    }
+    .form-label {
+      font-weight: 600;
+      font-size: 0.88rem;
+      color: #333;
+    }
+    .form-control, .form-select {
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      padding: 10px 14px;
+      font-size: 0.9rem;
+    }
+    .form-control:focus, .form-select:focus {
+      border-color: var(--saffron);
+      box-shadow: 0 0 0 3px rgba(255,107,0,0.15);
+    }
+    .academic-table th {
+      background: var(--light-bg);
+      font-size: 0.85rem;
+    }
+    .academic-table td {
+      vertical-align: middle;
+    }
+    .academic-table .form-control {
+      font-size: 0.85rem;
+      padding: 6px 10px;
+    }
+    .btn-submit-form {
+      background: linear-gradient(135deg, var(--saffron), var(--deep-maroon));
+      color: white;
+      border: none;
+      padding: 14px 40px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: block;
+      width: 100%;
+    }
+    .btn-submit-form:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(255,107,0,0.4);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Linked Navbar -->
+<div id="navbar-placeholder"></div>
+
+<!-- ADMISSION FORM SECTION -->
+<section class="form-section">
+  <div class="container">
+    <div class="form-container">
+      <h2 class="form-title">Admission Application Form (सत्र 2026-27)</h2>
+      <p class="form-subtitle">Please fill the form carefully. All fields marked with * are mandatory.</p>
+      
+      <form onsubmit="event.preventDefault(); alert('Form Submitted Successfully!');">
+        
+        <!-- Course Details -->
+        <fieldset>
+          <legend><i class="fas fa-graduation-cap me-2"></i>Course Details</legend>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="course" class="form-label">Course Applied For (प्रवेश हेतु पाठ्यक्रम) *</label>
+              <select id="course" class="form-select" required>
+                <option value="">-- Select a Course --</option>
+                <optgroup label="Undergraduate (UG)">
+                  <option>B.Sc. (Bachelor of Science)</option>
+                  <option>B.A. (Bachelor of Arts)</option>
+                  <option>B.Com (Bachelor of Commerce)</option>
+                </optgroup>
+                <optgroup label="Postgraduate (PG)">
+                  <option>M.Sc. (Master of Science)</option>
+                  <option>M.A. (Master of Arts)</option>
+                </optgroup>
+                <optgroup label="Professional">
+                  <option>BCA (Bachelor of Computer Applications)</option>
+                  <option>B.Sc. IT (Bachelor of Science in IT)</option>
+                  <option>B.Lib (Bachelor of Library Science)</option>
+                  <option>B.Ed (Bachelor of Education)</option>
+                </optgroup>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label for="wrn" class="form-label">W.R.N. No. (Web Registration Number) </label>
+              <input type="text" class="form-control" id="wrn" placeholder="As provided by University">
+            </div>
+            <div class="col-12 mt-3">
+              <label class="form-label mb-2">Subject Choices for Admission (विषय चुनें - अधिकतम 6) *</label>
+              <div class="row g-2">
+                <div class="col-md-4 col-sm-6"><input type="text" class="form-control" placeholder="Subject 1"></div>
+                <div class="col-md-4 col-sm-6"><input type="text" class="form-control" placeholder="Subject 2"></div>
+                <div class="col-md-4 col-sm-6"><input type="text" class="form-control" placeholder="Subject 3"></div>
+                <div class="col-md-4 col-sm-6"><input type="text" class="form-control" placeholder="Subject 4"></div>
+                <div class="col-md-4 col-sm-6"><input type="text" class="form-control" placeholder="Subject 5"></div>
+                <div class="col-md-4 col-sm-6"><input type="text" class="form-control" placeholder="Subject 6"></div>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Personal Details -->
+        <fieldset>
+          <legend><i class="fas fa-user-alt me-2"></i>Personal Details</legend>
+          <div class="row g-3">
+            <div class="col-md-4">
+              <label for="fullName" class="form-label">Full Name (पूरा नाम) *</label>
+              <input type="text" class="form-control" id="fullName" placeholder="As per High School Marksheet" required>
+            </div>
+            <div class="col-md-4">
+              <label for="fatherName" class="form-label">Father's Name (पिता का नाम) *</label>
+              <input type="text" class="form-control" id="fatherName" placeholder="Enter Father's Name" required>
+            </div>
+            <div class="col-md-4">
+              <label for="motherName" class="form-label">Mother's Name (माता का नाम) *</label>
+              <input type="text" class="form-control" id="motherName" placeholder="Enter Mother's Name" required>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label">Date of Birth (जन्म तिथि) *</label>
+              <input type="date" class="form-control" required>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label">Gender (लिंग) *</label>
+              <div>
+                <div class="form-check form-check-inline mt-1">
+                  <input class="form-check-input" type="radio" name="gender" id="male" value="male" required>
+                  <label class="form-check-label" for="male">Male</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                  <label class="form-check-label" for="female">Female</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label">Marital Status (वैवाहिक स्थिति) *</label>
+              <select class="form-select" required>
+                <option value="">-- Select --</option>
+                <option>Unmarried (अविवाहित)</option>
+                <option>Married (विवाहित)</option>
+              </select>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label">Area (क्षेत्र) *</label>
+              <select class="form-select" required>
+                <option value="">-- Select --</option>
+                <option>Rural (ग्रामीण)</option>
+                <option>Urban (शहरी)</option>
+              </select>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label">Category (वर्ग) *</label>
+              <select class="form-select" required>
+                <option value="">-- Select --</option>
+                <option>General</option>
+                <option>OBC</option>
+                <option>SC</option>
+                <option>ST</option>
+              </select>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label">Caste (जाति)</label>
+              <input type="text" class="form-control" placeholder="Sub-caste">
+            </div>
+            <div class="col-md-2">
+              <label class="form-label">Religion (धर्म)</label>
+              <input type="text" class="form-control" placeholder="e.g., Hindu">
+            </div>
+            <div class="col-md-2">
+              <label class="form-label">Minority (अल्पसंख्यक)</label>
+              <select class="form-select" required>
+                <option>No</option>
+                <option>Yes</option>
+              </select>
+            </div>
+            <div class="col-md-2">
+              <label class="form-label">Nationality (राष्ट्रीयता)</label>
+              <input type="text" class="form-control" value="Indian" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Aadhar Number (आधार संख्या) *</label>
+              <input type="text" class="form-control" placeholder="12-digit Aadhar No." maxlength="14" required>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label">Father's Occupation (पिता का पेशा) *</label>
+              <input type="text" class="form-control" placeholder="Business, Service, etc." required>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label">Annual Income (वार्षिक आय) *</label>
+              <input type="text" class="form-control" placeholder="In Rupees (₹)" required>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Contact Details -->
+        <fieldset>
+          <legend><i class="fas fa-address-book me-2"></i>Contact Details</legend>
+          <div class="row g-3">
+            <div class="col-12">
+              <label class="form-label">Correspondence Address (पत्राचार का पता) *</label>
+              <textarea class="form-control" rows="2" placeholder="House No., Street, Village, etc." required></textarea>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <label class="form-label">Post (पोस्ट) *</label>
+              <input type="text" class="form-control" placeholder="Enter Post Office" required>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <label class="form-label">Tehsil (तहसील) *</label>
+              <input type="text" class="form-control" placeholder="Enter Tehsil" required>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <label class="form-label">District (जिला) *</label>
+              <input type="text" class="form-control" placeholder="Enter District" required>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <label class="form-label">Pin Code (पिन कोड) *</label>
+              <input type="text" class="form-control" placeholder="Enter Pin Code" required>
+            </div>
+            <div class="col-12 mt-3">
+              <label class="form-label">Permanent Address (स्थाई पता) *</label>
+              <textarea class="form-control" rows="2" placeholder="Leave empty if same as above"></textarea>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Mobile Number 1 (मोबाइल नंबर) *</label>
+              <input type="tel" class="form-control" placeholder="10-digit number" required>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Mobile Number 2 (मोबाइल नंबर 2) *</label>
+              <input type="tel" class="form-control" placeholder="Alternative number" required>
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Email ID (ईमेल)</label>
+              <input type="email" class="form-control" placeholder="Active Email Address">
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Academic Details -->
+        <fieldset>
+          <legend><i class="fas fa-book-reader me-2"></i>Academic Qualifications</legend>
+          <div class="table-responsive">
+            <table class="table table-bordered academic-table" style="min-width: 900px;">
+              <thead>
+                <tr>
+                  <th>Examination (परीक्षा)</th>
+                  <th>College Name (विद्यालय का नाम)</th>
+                  <th>Board / University</th>
+                  <th>Exam Type (Reg/Pvt)</th>
+                  <th>Roll No.</th>
+                  <th>Year of Passing</th>
+                  <th>Subjects (विषय)</th>
+                  <th>Percentage (%)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>High School (10th) *</td>
+                  <td><input type="text" class="form-control" placeholder="College Name" required></td>
+                  <td><input type="text" class="form-control" placeholder="Board Name" required></td>
+                  <td><select class="form-select form-control" required><option>Regular</option><option>Private</option></select></td>
+                  <td><input type="text" class="form-control" placeholder="Roll No." required></td>
+                  <td><input type="text" class="form-control" placeholder="Year" required></td>
+                  <td><input type="text" class="form-control" placeholder="Subjects" required></td>
+                  <td><input type="text" class="form-control" placeholder="%" required></td>
+                </tr>
+                <tr>
+                  <td>Intermediate (12th) *</td>
+                  <td><input type="text" class="form-control" placeholder="College Name" required></td>
+                  <td><input type="text" class="form-control" placeholder="Board Name" required></td>
+                  <td><select class="form-select form-control" required><option>Regular</option><option>Private</option></select></td>
+                  <td><input type="text" class="form-control" placeholder="Roll No." required></td>
+                  <td><input type="text" class="form-control" placeholder="Year" required></td>
+                  <td><input type="text" class="form-control" placeholder="Subjects" required></td>
+                  <td><input type="text" class="form-control" placeholder="%" required></td>
+                </tr>
+                <tr>
+                  <td>Graduation (स्नातक)</td>
+                  <td><input type="text" class="form-control" placeholder="College Name"></td>
+                  <td><input type="text" class="form-control" placeholder="University Name"></td>
+                  <td><select class="form-select form-control"><option value="">-</option><option>Regular</option><option>Private</option></select></td>
+                  <td><input type="text" class="form-control" placeholder="Roll No."></td>
+                  <td><input type="text" class="form-control" placeholder="Year"></td>
+                  <td><input type="text" class="form-control" placeholder="Subjects"></td>
+                  <td><input type="text" class="form-control" placeholder="%"></td>
+                </tr>
+                <tr>
+                  <td>Other (अन्य)</td>
+                  <td><input type="text" class="form-control" placeholder="College Name"></td>
+                  <td><input type="text" class="form-control" placeholder="Board / Univ."></td>
+                  <td><select class="form-select form-control"><option value="">-</option><option>Regular</option><option>Private</option></select></td>
+                  <td><input type="text" class="form-control" placeholder="Roll No."></td>
+                  <td><input type="text" class="form-control" placeholder="Year"></td>
+                  <td><input type="text" class="form-control" placeholder="Subjects"></td>
+                  <td><input type="text" class="form-control" placeholder="%"></td>
+                </tr>
+              </tbody>
+            </table>
+            <small class="form-text text-muted">Please fill Graduation details if applying for PG courses.</small>
+          </div>
+        </fieldset>
+
+        <!-- Document Upload -->
+        <fieldset>
+          <legend><i class="fas fa-cloud-upload-alt me-2"></i>Document Uploads</legend>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="photo" class="form-label">Passport Size Photo (फोटो) *</label>
+              <input type="file" class="form-control" id="photo" required>
+            </div>
+            <div class="col-md-6">
+              <label for="signature" class="form-label">Signature (हस्ताक्षर) *</label>
+              <input type="file" class="form-control" id="signature" required>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Documents Submitted Checklist -->
+        <fieldset>
+          <legend><i class="fas fa-check-square me-2"></i>Documents Submitted (संलग्न प्रपत्र)</legend>
+          <p style="font-size:0.85rem;color:#666;">टिक (✓) लगाएं जो दस्तावेज आपने फॉर्म के साथ संलग्न किए हैं:</p>
+          <div class="row g-3">
+            <div class="col-md-3 col-sm-6">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="doc1">
+                <label class="form-check-label" for="doc1">10th Marksheet</label>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="doc2">
+                <label class="form-check-label" for="doc2">12th Marksheet</label>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="doc3">
+                <label class="form-check-label" for="doc3">Graduation Marksheet</label>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="doc4">
+                <label class="form-check-label" for="doc4">T.C. / Migration Card</label>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="doc5">
+                <label class="form-check-label" for="doc5">Aadhar Card Copy</label>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="doc6">
+                <label class="form-check-label" for="doc6">Caste Certificate</label>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="doc7">
+                <label class="form-check-label" for="doc7">Income Certificate</label>
+              </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="doc8">
+                <label class="form-check-label" for="doc8">Character Certificate</label>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Declaration -->
+        <div class="row mb-4 align-items-center">
+          <div class="col-md-8">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="declaration" required>
+              <label class="form-check-label" for="declaration" style="font-size:0.9rem;">
+                I hereby declare that all the information provided by me in this form is true and correct to the best of my knowledge. (मैं घोषणा करता/करती हूँ कि इस फॉर्म में दी गई सभी जानकारी सही है।)
+              </label>
+            </div>
+          </div>
+          <div class="col-md-4 mt-3 mt-md-0">
+            <div class="d-flex align-items-center gap-2">
+              <label class="form-label mb-0" style="white-space:nowrap;font-weight:600;">Date:</label>
+              <input type="date" class="form-control" required>
+            </div>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn-submit-form">
+          <i class="fas fa-paper-plane me-2"></i>Submit Application
+        </button>
+
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Linked Footer from footer.html -->
+<div id="footer-placeholder"></div>
+<script>
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

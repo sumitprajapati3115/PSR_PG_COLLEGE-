@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exam Schedule - Purshottam Sri Ram P.G. College</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .page-header {
+      background-image: linear-gradient(rgba(10, 31, 92, 0.85), rgba(10, 31, 92, 0.85)), url('https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+      background-position: center; background-repeat: no-repeat; background-size: cover;
+      padding: 60px 0; text-align: center; color: white;
+    }
+    .page-header h1 { font-weight: 800; font-size: 2.8rem; }
+    .breadcrumb-item a { color: var(--gold); text-decoration: none; }
+    .content-section { padding: 70px 0; min-height: 50vh;}
+    .section-title { font-size: clamp(1.5rem, 4vw, 2.2rem); font-weight: 800; color: var(--navy); margin-bottom: 10px; }
+    .section-divider { width: 60px; height: 4px; background: linear-gradient(90deg, var(--saffron), var(--gold)); border-radius: 2px; margin-bottom: 40px; }
+    .notice-card { border-left: 5px solid var(--saffron); padding: 25px; background: #fff; box-shadow: 0 5px 20px rgba(0,0,0,0.05); border-radius: 12px; margin-bottom: 20px;}
+    .notice-date { font-size: 0.85rem; color: #888; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+
+  <header class="page-header">
+    <div class="container">
+      <h1>Exam Schedule</h1>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb justify-content-center mb-0 bg-transparent">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Exams</li>
+        </ol>
+      </nav>
+    </div>
+  </header>
+
+  <section class="content-section bg-light">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-title">Latest Examination Notices</h2>
+        <div class="section-divider mx-auto"></div>
+      </div>
+      <div class="row justify-content-center mt-4">
+        <div class="col-lg-8">
+          <div class="notice-card">
+            <div class="notice-date"><i class="fas fa-calendar-alt me-2"></i>Upcoming</div>
+            <h5 class="mt-2 text-dark font-weight-bold">Even Semester Examination Time Table 2026</h5>
+            <p class="text-muted">The detailed exam schedule will be updated here as soon as it is officially released by CSJM University, Kanpur.</p>
+            <button class="btn btn-outline-primary btn-sm disabled"><i class="fas fa-download me-2"></i>Download PDF (Soon)</button>
+          </div>
+          
+          <div class="notice-card">
+            <div class="notice-date"><i class="fas fa-calendar-alt me-2"></i>Past Notice</div>
+            <h5 class="mt-2 text-dark font-weight-bold">Internal Practical Exams Schedule</h5>
+            <p class="text-muted">Contact your respective HODs for the practical examination dates.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

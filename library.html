@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Central Library - Purshottam Sri Ram P.G. College</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .page-header {
+      background-image: linear-gradient(rgba(10, 31, 92, 0.85), rgba(10, 31, 92, 0.85)), url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+      background-position: center; background-repeat: no-repeat; background-size: cover;
+      padding: 60px 0; text-align: center; color: white;
+    }
+    .page-header h1 { font-weight: 800; font-size: 2.8rem; }
+    .breadcrumb-item a { color: var(--gold); text-decoration: none; }
+    .content-section { padding: 70px 0; }
+    .section-title { font-size: clamp(1.5rem, 4vw, 2.2rem); font-weight: 800; color: var(--navy); margin-bottom: 10px; }
+    .section-divider { width: 60px; height: 4px; background: linear-gradient(90deg, var(--saffron), var(--gold)); border-radius: 2px; margin-bottom: 30px; }
+  </style>
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+
+  <header class="page-header">
+    <div class="container">
+      <h1>Central Library</h1>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb justify-content-center mb-0 bg-transparent">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Library</li>
+        </ol>
+      </nav>
+    </div>
+  </header>
+
+  <section class="content-section bg-light">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <img src="https://images.unsplash.com/photo-1568667256549-094345857637?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="img-fluid rounded shadow-lg" alt="Library Interior">
+        </div>
+        <div class="col-lg-6">
+          <h2 class="section-title">A Hub of Knowledge</h2>
+          <div class="section-divider"></div>
+          <p class="text-muted" style="line-height: 1.8;">
+            The Central Library of Purshottam Sri Ram P.G. College is an essential component of our outstanding research and education mission. It provides a safe, comfortable, and friendly environment that enables learning and advancement of knowledge.
+          </p>
+          <ul class="list-group list-group-flush mt-4" style="border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+            <li class="list-group-item py-3"><i class="fas fa-check-circle text-success me-3"></i><strong>Rich Collection:</strong> Over 10,000+ books covering various disciplines.</li>
+            <li class="list-group-item py-3"><i class="fas fa-check-circle text-success me-3"></i><strong>Digital Access:</strong> High-speed internet with access to e-books and online journals.</li>
+            <li class="list-group-item py-3"><i class="fas fa-check-circle text-success me-3"></i><strong>Reading Halls:</strong> Spacious and quiet reading rooms for focused study.</li>
+            <li class="list-group-item py-3"><i class="fas fa-check-circle text-success me-3"></i><strong>Magazines & Newspapers:</strong> Daily newspapers and monthly magazines to keep students updated.</li>
+          </ul>
+          <div class="mt-4">
+            <a href="study_material.html" class="btn btn-outline-primary px-4 rounded-pill">Access E-Library <i class="fas fa-arrow-right ms-2"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
