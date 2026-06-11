@@ -76,10 +76,22 @@ footer ul li i { color: var(--saffron); margin-right: 8px; font-size: 0.75rem; }
   .navbar-call-btn { margin: 10px 20px 0 !important; display: block; text-align: center; padding: 11px 20px !important; border-radius: 8px !important; }
 }
 @media (max-width: 768px) {
-  .college-name-en { font-size: 1.1rem; }
-  .college-name-hi { font-size: 0.95rem; }
-  .college-header .college-logo { width: 85px; }
-  .admission-badge { font-size: 0.75rem; padding: 6px 12px; }
+  .college-name-en { font-size: 1.05rem; }
+  .college-name-hi { font-size: 0.9rem; }
+  .college-header .college-logo { width: 75px; }
+  .admission-badge { font-size: 0.75rem; padding: 5px 12px; display: inline-block; }
+  
+  /* Center align header on mobile */
+  .college-header > .container > .d-flex { justify-content: center !important; }
+  .college-header .text-end { text-align: center !important; width: 100%; margin-top: 5px; }
+  
+  /* Mobile Layout Spacing Optimization */
+  section[class*="-section"], .content-section { padding: 40px 0 !important; }
+  .page-header { padding: 40px 0 !important; }
+  .page-header h1 { font-size: 2rem !important; }
+  footer { padding: 40px 0 0 !important; }
+  .section-divider { margin-bottom: 25px !important; }
+  .g-5, .gy-5 { --bs-gutter-y: 2rem; } /* Reduce gap between stacked columns */
 }
 
 /* ===== GALLERY ===== */
