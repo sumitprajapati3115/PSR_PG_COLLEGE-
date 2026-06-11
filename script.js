@@ -5,15 +5,62 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(data => {
       document.getElementById('navbar-placeholder').innerHTML = data;
       
-      // Highlight Active Page
-      let page = window.location.pathname.split('/').pop() || 'index.html';
-      document.querySelectorAll('.main-navbar .nav-link').forEach(l => l.classList.remove('active'));
-      document.querySelectorAll('.main-navbar a').forEach(link => {
-        let href = link.getAttribute('href');
-        if (href && href.startsWith(page)) {
-          const navLink = link.closest('.nav-item').querySelector('.nav-link');
-          if (navLink) navLink.classList.add('active');
+      // Highlight Active Page & Module
+      function setActiveLink() {
+        let page = window.location.pathname.split('/').pop() || 'index.html';
+        let hash = window.location.hash;
+        
+        document.querySelectorAll('.main-navbar .nav-link, .main-navbar .dropdown-item').forEach(l => l.classList.remove('active'));
+
+        let matched = false;
+        
+        // Full match with hash (e.g., course.html#ug)
+        if (hash) {
+          let exactMatch = document.querySelector(`.main-navbar a[href="${page}${hash}"]`);
+          if (exactMatch) {
+            exactMatch.classList.add('active');
+            let parentNavItem = exactMatch.closest('.nav-item');
+            if (parentNavItem) {
+              let parentNavLink = parentNavItem.querySelector('.nav-link');
+              if (parentNavLink) parentNavLink.classList.add('active');
+            }
+            matched = true;
+          }
         }
+
+        // Fallback to page match
+        if (!matched) {
+          document.querySelectorAll('.main-navbar a').forEach(link => {
+            let href = link.getAttribute('href');
+            if (!href || href === '#') return;
+            let hrefPage = href.split('#')[0];
+            if (hrefPage === page) {
+              link.classList.add('active');
+              let parentNavItem = link.closest('.nav-item');
+              if (parentNavItem) {
+                let parentNavLink = parentNavItem.querySelector('.nav-link');
+                if (parentNavLink) parentNavLink.classList.add('active');
+              }
+            }
+          });
+        }
+      }
+
+      setActiveLink();
+      window.addEventListener('hashchange', setActiveLink);
+
+      // Instant Highlight on click
+      document.querySelectorAll('.main-navbar a').forEach(link => {
+        link.addEventListener('click', function() {
+          if (this.classList.contains('dropdown-toggle')) return;
+          document.querySelectorAll('.main-navbar .nav-link, .main-navbar .dropdown-item').forEach(l => l.classList.remove('active'));
+          this.classList.add('active');
+          let parentNavItem = this.closest('.nav-item');
+          if (parentNavItem) {
+            let parentNavLink = parentNavItem.querySelector('.nav-link');
+            if (parentNavLink) parentNavLink.classList.add('active');
+          }
+        });
       });
       
       window.dispatchEvent(new Event('scroll'));

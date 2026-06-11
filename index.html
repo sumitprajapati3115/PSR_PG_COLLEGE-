@@ -627,7 +627,7 @@
                 <p class="hero-desc">CSJM University affiliated college offering quality education in Science, Arts, Commerce & Professional courses. Shaping futures since establishment.</p>
                 <div class="d-flex gap-3 flex-wrap">
                   <a href="#courses" class="btn-hero-primary">Explore Courses</a>
-                  <a href="#contact" class="btn-hero-outline">Apply Now →</a>
+                  <a href="admission_form.html" class="btn-hero-outline">Apply Now →</a>
                 </div>
                 <div class="hero-stats">
                   <div class="hero-stat">
@@ -903,7 +903,7 @@
             </div>
             <div class="course-card-footer">
               <span style="font-size:0.82rem;color:#888;">Duration: 3 Years</span>
-              <a href="#contact" class="btn-apply">Apply Now</a>
+              <a href="admission_form.html" class="btn-apply">Apply Now</a>
             </div>
           </div>
         </div>
@@ -925,7 +925,7 @@
             </div>
             <div class="course-card-footer">
               <span style="font-size:0.82rem;color:#888;">Duration: 3 Years</span>
-              <a href="#contact" class="btn-apply">Apply Now</a>
+              <a href="admission_form.html" class="btn-apply">Apply Now</a>
             </div>
           </div>
         </div>
@@ -947,7 +947,7 @@
             </div>
             <div class="course-card-footer">
               <span style="font-size:0.82rem;color:#888;">Duration: 3 Years</span>
-              <a href="#contact" class="btn-apply">Apply Now</a>
+              <a href="admission_form.html" class="btn-apply">Apply Now</a>
             </div>
           </div>
         </div>
@@ -975,7 +975,7 @@
             </div>
             <div class="course-card-footer">
               <span style="font-size:0.82rem;color:#888;">Duration: 2 Years</span>
-              <a href="#contact" class="btn-apply">Apply Now</a>
+              <a href="admission_form.html" class="btn-apply">Apply Now</a>
             </div>
           </div>
         </div>
@@ -997,7 +997,7 @@
             </div>
             <div class="course-card-footer">
               <span style="font-size:0.82rem;color:#888;">Duration: 2 Years</span>
-              <a href="#contact" class="btn-apply">Apply Now</a>
+              <a href="admission_form.html" class="btn-apply">Apply Now</a>
             </div>
           </div>
         </div>
@@ -1024,7 +1024,7 @@
             </div>
             <div class="course-card-footer">
               <span style="font-size:0.82rem;color:#888;">3 Years</span>
-              <a href="#contact" class="btn-apply">Apply</a>
+              <a href="admission_form.html" class="btn-apply">Apply</a>
             </div>
           </div>
         </div>
@@ -1045,7 +1045,7 @@
             </div>
             <div class="course-card-footer">
               <span style="font-size:0.82rem;color:#888;">3 Years</span>
-              <a href="#contact" class="btn-apply">Apply</a>
+              <a href="admission_form.html" class="btn-apply">Apply</a>
             </div>
           </div>
         </div>
@@ -1066,7 +1066,7 @@
             </div>
             <div class="course-card-footer">
               <span style="font-size:0.82rem;color:#888;">1 Year</span>
-              <a href="#contact" class="btn-apply">Apply</a>
+              <a href="admission_form.html" class="btn-apply">Apply</a>
             </div>
           </div>
         </div>
@@ -1087,7 +1087,7 @@
             </div>
             <div class="course-card-footer">
               <span style="font-size:0.82rem;color:#888;">2 Years</span>
-              <a href="#contact" class="btn-apply">Apply</a>
+              <a href="admission_form.html" class="btn-apply">Apply</a>
             </div>
           </div>
         </div>
@@ -1345,7 +1345,7 @@
 <div id="footer-placeholder"></div>
 
 <!-- FLOATING BUTTONS -->
-<a href="#contact" class="float-apply">
+<a href="admission_form.html" class="float-apply">
   <i class="fas fa-graduation-cap"></i>
   <span>Apply Now</span>
 </a>
@@ -1480,7 +1480,8 @@
         const link = document.querySelector(`.main-navbar a[href="index.html#${id}"]`);
         if (link) {
           if (scrollPos >= top && scrollPos < bottom) {
-            document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+            document.querySelectorAll('.main-navbar .nav-link, .main-navbar .dropdown-item').forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
             const navLink = link.closest('.nav-item').querySelector('.nav-link');
             if (navLink) navLink.classList.add('active');
           }
