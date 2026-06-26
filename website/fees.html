@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fee Structure - Purshottam Sri Ram P.G. College</title>
+  <link rel="icon" href="image/logo.png" type="image/png">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .page-header {
+      background-image: linear-gradient(rgba(10, 31, 92, 0.85), rgba(10, 31, 92, 0.85)), url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding: 60px 0;
+      text-align: center;
+      color: white;
+    }
+    .page-header h1 { font-weight: 800; font-size: 2.8rem; }
+    .breadcrumb-item a { color: var(--gold); text-decoration: none; }
+    .content-section { padding: 70px 0; }
+    .section-title { font-size: clamp(1.5rem, 4vw, 2.2rem); font-weight: 800; color: var(--navy); margin-bottom: 10px; }
+    .section-divider { width: 60px; height: 4px; background: linear-gradient(90deg, var(--saffron), var(--gold)); border-radius: 2px; margin-bottom: 40px; }
+    
+    /* Dynamic Table Styles */
+    .fee-table-container { background: white; border-radius: 15px; padding: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border-top: 5px solid var(--saffron); }
+    .fee-table { margin-bottom: 0; white-space: normal; font-size: 0.85rem; width: 100%; border-collapse: separate; border-spacing: 0; }
+    .fee-table thead th { background: var(--navy); color: white; border: none; padding: 12px 6px; font-weight: 600; text-align: center; vertical-align: middle; position: sticky; top: 0; z-index: 20; box-shadow: 0 2px 5px rgba(0,0,0,0.15); line-height: 1.2; }
+    .fee-table tbody td { padding: 10px 6px; border-bottom: 1px solid #eef0f5; color: #444; font-weight: 500; text-align: center; vertical-align: middle; background: white; transition: 0.2s; line-height: 1.3; }
+    .fee-table tbody tr:last-child td { border-bottom: none; }
+    .fee-table tbody tr:nth-child(even) td { background-color: #f8f9fc; }
+    .fee-table tbody tr:hover td { background-color: rgba(255, 107, 0, 0.05); }
+    
+    .total-fee-badge { background: linear-gradient(135deg, var(--saffron), #ff4500); color: white; padding: 6px 12px; border-radius: 20px; font-weight: 800; font-size: 0.85rem; display: inline-block; box-shadow: 0 4px 10px rgba(255,107,0,0.3); white-space: nowrap; }
+    
+    /* Sticky Course Name Column */
+    .fee-table th.course-name-header { position: sticky; left: 0; z-index: 25; background: var(--deep-maroon); box-shadow: 2px 0 5px rgba(0,0,0,0.1); }
+    .fee-table td.course-name { position: sticky; left: 0; z-index: 10; font-weight: 700; color: var(--navy); font-size: 0.9rem; text-align: left !important; min-width: 140px; max-width: 200px; box-shadow: 3px 0 10px rgba(0,0,0,0.03); }
+    .fee-table tbody tr:nth-child(even) td.course-name { background-color: #f8f9fc; }
+    .fee-table tbody tr:hover td.course-name { background-color: #fff4ec; }
+    
+    .muted-zero { color: #bbb; font-weight: 400; }
+    .fee-badge-small { background: #f0f0f0; color: #666; padding: 3px 8px; border-radius: 5px; font-size: 0.8rem; display: inline-block; margin: 2px; }
+    
+    /* Custom Scrollbar for Table */
+    .table-scroll-wrapper { max-height: 500px; overflow-y: auto; overflow-x: auto; border: 1px solid #eef0f5; border-radius: 10px; margin-bottom: 20px; box-shadow: inset 0 0 10px rgba(0,0,0,0.02); }
+    .table-scroll-wrapper::-webkit-scrollbar { width: 6px; height: 6px; }
+    .table-scroll-wrapper::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 4px; }
+    .table-scroll-wrapper::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 4px; }
+    .table-scroll-wrapper::-webkit-scrollbar-thumb:hover { background: var(--saffron); }
+    
+    /* Search Box Styles */
+    .search-container { position: relative; width: 100%; max-width: 350px; }
+    .search-container i { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #888; }
+    .search-input { width: 100%; padding: 10px 15px 10px 40px; border-radius: 30px; border: 2px solid #eef0f5; outline: none; transition: 0.3s; font-size: 0.9rem; }
+    .search-input:focus { border-color: var(--saffron); box-shadow: 0 0 10px rgba(255,107,0,0.1); }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar Placeholder -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <h1>Fee Structure</h1>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb justify-content-center mb-0 bg-transparent">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Fees</li>
+        </ol>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Fee Section -->
+  <section class="content-section">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-title">Fees Chart All Class (2025-26)</h2>
+        <p class="text-muted">Shri Ram Group Of Education (SRGOE)</p>
+        <div class="section-divider mx-auto"></div>
+      </div>
+      
+      <div class="row justify-content-center mt-2">
+        <div class="col-lg-12">
+            <div class="fee-table-container">
+              
+              <div class="d-flex justify-content-between align-items-center flex-wrap mb-3 gap-3">
+                <h5 style="color: var(--navy); font-weight: 700; margin: 0;"><i class="fas fa-list-alt me-2"></i>Course Fee Details</h5>
+                <div class="search-container">
+                  <i class="fas fa-search"></i>
+                  <input type="text" id="courseSearch" class="search-input" placeholder="Search course by name (e.g. BCA, M.Sc)..." onkeyup="filterFees()">
+                </div>
+              </div>
+              
+              <div class="table-scroll-wrapper">
+                <table class="table fee-table">
+                  <thead>
+                    <tr>
+                      <th>Sr No</th>
+                      <th class="text-start course-name-header">Course / Class Name</th>
+                      <th>Total Fees</th>
+                    </tr>
+                  </thead>
+                  <tbody id="feeTableBody">
+                    <tr>
+                      <td>1</td>
+                      <td class="course-name">BA I (I &amp; II SEM.)</td>
+                      <td><span class="total-fee-badge">₹ 5,500</span></td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td class="course-name">BA II (III &amp; IV SEM.)</td>
+                      <td><span class="total-fee-badge">₹ 6,200</span></td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td class="course-name">BA III (V &amp; VI SEM.)</td>
+                      <td><span class="total-fee-badge">₹ 7,500</span></td>
+                    </tr>
+                    <tr>
+                      <td>4</td>
+                      <td class="course-name">BSC I (I &amp; II SEM.)</td>
+                      <td class="text-start px-3">
+                          <ul class="list-unstyled mb-0" style="font-size: 0.8rem; min-width: 180px;">
+                              <li class="d-flex justify-content-between border-bottom py-1">
+                                  <span>Maths Group</span>
+                                  <strong class="text-end">₹ 8,500</strong>
+                              </li>
+                              <li class="d-flex justify-content-between border-bottom py-1">
+                                  <span>Bio Group</span>
+                                  <strong class="text-end">₹ 9,000</strong>
+                              </li>
+                              <li class="d-flex justify-content-between border-bottom py-1">
+                                  <span>Biotech</span>
+                                  <strong class="text-end">₹ 9,000</strong>
+                              </li>
+                              <li class="d-flex justify-content-between pt-1">
+                                  <span>IT, CS, Ele & Sta.</span>
+                                  <strong class="text-end">₹ 8,500</strong>
+                              </li>
+                          </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td class="course-name">BSC II (III &amp; IV SEM.)</td>
+                      <td class="text-start px-3">
+                          <ul class="list-unstyled mb-0" style="font-size: 0.8rem; min-width: 180px;">
+                              <li class="d-flex justify-content-between border-bottom py-1">
+                                  <span>Maths Group</span>
+                                  <strong class="text-end">₹ 9,700</strong>
+                              </li>
+                              <li class="d-flex justify-content-between border-bottom py-1">
+                                  <span>Bio Group</span>
+                                  <strong class="text-end">₹ 10,200</strong>
+                              </li>
+                              <li class="d-flex justify-content-between border-bottom py-1">
+                                  <span>Biotech</span>
+                                  <strong class="text-end">₹ 10,200</strong>
+                              </li>
+                              <li class="d-flex justify-content-between pt-1">
+                                  <span>IT, CS, Ele & Sta.</span>
+                                  <strong class="text-end">₹ 9,700</strong>
+                              </li>
+                          </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>6</td>
+                      <td class="course-name">BSC III (V &amp; VI SEM.)</td>
+                      <td class="text-start px-3">
+                          <ul class="list-unstyled mb-0" style="font-size: 0.8rem; min-width: 180px;">
+                              <li class="d-flex justify-content-between border-bottom py-1">
+                                  <span>Maths Group</span>
+                                  <strong class="text-end">₹ 11,000</strong>
+                              </li>
+                              <li class="d-flex justify-content-between border-bottom py-1">
+                                  <span>Bio Group</span>
+                                  <strong class="text-end">₹ 11,500</strong>
+                              </li>
+                              <li class="d-flex justify-content-between border-bottom py-1">
+                                  <span>Biotech</span>
+                                  <strong class="text-end">₹ 13,500</strong>
+                              </li>
+                              <li class="d-flex justify-content-between pt-1">
+                                  <span>IT, CS, Ele & Sta.</span>
+                                  <strong class="text-end">₹ 13,000</strong>
+                              </li>
+                          </ul>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>7</td>
+                      <td class="course-name">BCOM I (I &amp; II SEM.)</td>
+                      <td><span class="total-fee-badge">₹ 8,000</span></td>
+                    </tr>
+                    <tr>
+                      <td>8</td>
+                      <td class="course-name">BCOM II (III &amp; IV SEM.)</td>
+                      <td><span class="total-fee-badge">₹ 8,700</span></td>
+                    </tr>
+                    <tr>
+                      <td>9</td>
+                      <td class="course-name">BCOM III (V &amp; VI SEM.)</td>
+                      <td><span class="total-fee-badge">₹ 12,000</span></td>
+                    </tr>
+                    <tr>
+                      <td>10</td>
+                      <td class="course-name">BBA I (I &amp; II SEM.)</td>
+                      <td><span class="total-fee-badge">₹ 40,000</span></td>
+                    </tr>
+                    <tr>
+                      <td>11</td>
+                      <td class="course-name">BBA II (III &amp; IV SEM.)</td>
+                      <td><span class="total-fee-badge">₹ 40,000</span></td>
+                    </tr>
+                    <tr>
+                      <td>12</td>
+                      <td class="course-name">BBA III (V &amp; VI SEM.)</td>
+                      <td><span class="total-fee-badge">₹ 41,500</span></td>
+                    </tr>
+                    <tr>
+                      <td>13</td>
+                      <td class="course-name">BCA I (I &amp; II SEM.)</td>
+                      <td><span class="total-fee-badge">₹ 40,000</span></td>
+                    </tr>
+                    <tr>
+                      <td>14</td>
+                      <td class="course-name">BCA II (III &amp; IV SEM.)</td>
+                      <td><span class="total-fee-badge">₹ 40,000</span></td>
+                    </tr>
+                    <tr>
+                      <td>15</td>
+                      <td class="course-name">BCA III (V &amp; VI SEM.)</td>
+                      <td><span class="total-fee-badge">₹ 41,500</span></td>
+                    </tr>
+                    <tr>
+                      <td>16</td>
+                      <td class="course-name">BLIB I &amp; II SEM.</td>
+                      <td><span class="total-fee-badge">₹ 40,000</span></td>
+                    </tr>
+                    <tr>
+                      <td>17</td>
+                      <td class="course-name">MA EDUCATION (I &amp; II SEM.)</td>
+                      <td><span class="total-fee-badge">₹ 12,000</span></td>
+                    </tr>
+                    <tr>
+                      <td>18</td>
+                      <td class="course-name">MA EDUCATION (III &amp; IV SEM.)</td>
+                      <td><span class="total-fee-badge">₹ 15,500</span></td>
+                    </tr>
+                    <tr>
+                      <td>19</td>
+                      <td class="course-name">MA ENGLISH (I &amp; II SEM.)</td>
+                      <td><span class="total-fee-badge">₹ 12,000</span></td>
+                    </tr>
+                    <tr>
+                      <td>20</td>
+                      <td class="course-name">MA ENGLISH (III &amp; IV SEM.)</td>
+                      <td><span class="total-fee-badge">₹ 15,500</span></td>
+                    </tr>
+                    <tr>
+                      <td>21</td>
+                      <td class="course-name">MA HINDI (I &amp; II SEM.)</td>
+                      <td><span class="total-fee-badge">₹ 10,500</span></td>
+                    </tr>
+                    <tr>
+                      <td>22</td>
+                      <td class="course-name">MA HINDI (III &amp; IV SEM.)</td>
+                      <td><span class="total-fee-badge">₹ 14,000</span></td>
+                    </tr>
+                    <tr>
+                      <td>23</td>
+                      <td class="course-name">MA SOCIOLOGY (I &amp; II SEM.)</td>
+                      <td><span class="total-fee-badge">₹ 10,500</span></td>
+                    </tr>
+                    <tr>
+                      <td>24</td>
+                      <td class="course-name">MA SOCIOLOGY (III &amp; IV SEM.)</td>
+                      <td><span class="total-fee-badge">₹ 14,000</span></td>
+                    </tr>
+                    <tr>
+                      <td>25</td>
+                      <td class="course-name">MA ECONOMICS (I &amp; II SEM.)</td>
+                      <td><span class="total-fee-badge">₹ 10,500</span></td>
+                    </tr>
+                    <tr>
+                      <td>26</td>
+                      <td class="course-name">MA ECONOMICS (III &amp; IV SEM.)</td>
+                      <td><span class="total-fee-badge">₹ 14,000</span></td>
+                    </tr>
+                    <tr>
+                      <td>27</td>
+                      <td class="course-name">MSC PHYSICS (I &amp; II SEM.)</td>
+                      <td><span class="total-fee-badge">₹ 32,000</span></td>
+                    </tr>
+                    <tr>
+                      <td>28</td>
+                      <td class="course-name">MSC PHYSICS (III &amp; IV SEM.)</td>
+                      <td><span class="total-fee-badge">₹ 35,500</span></td>
+                    </tr>
+                    <tr>
+                      <td>29</td>
+                      <td class="course-name">MSC CHEMISTRY (I &amp; II SEM.)</td>
+                      <td><span class="total-fee-badge">₹ 32,000</span></td>
+                    </tr>
+                    <tr>
+                      <td>30</td>
+                      <td class="course-name">MSC CHEMISTRY (III &amp; IV SEM.)</td>
+                      <td><span class="total-fee-badge">₹ 35,500</span></td>
+                    </tr>
+                    <tr>
+                      <td>31</td>
+                      <td class="course-name">MSC MATHEMATICS (I &amp; II SEM.)</td>
+                      <td><span class="total-fee-badge">₹ 32,000</span></td>
+                    </tr>
+                    <tr>
+                      <td>32</td>
+                      <td class="course-name">MSC MATHEMATICS (III &amp; IV SEM.)</td>
+                      <td><span class="total-fee-badge">₹ 35,500</span></td>
+                    </tr>
+                    <tr>
+                      <td>33</td>
+                      <td class="course-name">MSC ZOOLOGY (I &amp; II SEM.)</td>
+                      <td><span class="total-fee-badge">₹ 32,000</span></td>
+                    </tr>
+                    <tr>
+                      <td>34</td>
+                      <td class="course-name">MSC ZOOLOGY (III &amp; IV SEM.)</td>
+                      <td><span class="total-fee-badge">₹ 35,500</span></td>
+                    </tr>
+                    <tr>
+                      <td>35</td>
+                      <td class="course-name">MSC BOTANY (I &amp; II SEM.)</td>
+                      <td><span class="total-fee-badge">₹ 32,000</span></td>
+                    </tr>
+                    <tr>
+                      <td>36</td>
+                      <td class="course-name">MSC BOTANY (III &amp; IV SEM.)</td>
+                      <td><span class="total-fee-badge">₹ 35,500</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              
+                <div class="alert alert-info mt-4" role="alert">
+                    <h4 class="alert-heading"><i class="fas fa-info-circle"></i> Important Note!</h4>
+                    <p>The final fee amount may vary based on the subjects chosen (like Practical/Technical subjects). For detailed information, please contact the college admission office.</p>
+                    <hr>
+                    <p class="mb-0"><strong>Contact Office:</strong> <a href="tel:9415067926" class="alert-link">9415067926</a></p>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <style>
+    /* =========================================
+   Modern Bank Details Card Styles
+========================================= */
+
+.bank-card {
+    border-radius: 20px;
+    padding: 30px 25px;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    height: 100%;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1;
+}
+
+.bank-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+/* Specific Bank Gradients & Border */
+.union-card {
+    background: linear-gradient(135deg, #0f4c81 0%, #1a73e8 100%);
+    border-left: 8px solid #e1251b; /* Union Bank Red */
+}
+
+.hdfc-card {
+    background: linear-gradient(135deg, #004c8f 0%, #002b5e 100%);
+    border-left: 8px solid #ed232a; /* HDFC Red */
+}
+
+/* Bank Logo Container */
+.bank-logo-wrap {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: inline-block;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.bank-logo {
+    height: 32px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Typography */
+.bank-info h5 {
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+/* Glassmorphism List Styles */
+.bank-details-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.bank-details-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    background: rgba(255, 255, 255, 0.1); /* Glass effect */
+    padding: 12px 15px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: background 0.3s;
+}
+
+.bank-details-list li:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.bank-details-list li i {
+    background: rgba(255, 255, 255, 0.2);
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 15px;
+    color: #fff;
+    font-size: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.bank-details-list li span {
+    letter-spacing: 0.5px;
+}
+
+.bank-details-list li strong {
+    color: #ffda75; /* Golden yellow for labels */
+    font-weight: 600;
+    margin-right: 8px;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+}
+
+/* Background Watermark Icon */
+.card-bg-icon {
+    position: absolute;
+    right: -20px;
+    bottom: -30px;
+    font-size: 180px;
+    opacity: 0.06;
+    z-index: -1;
+    transform: rotate(-15deg);
+    pointer-events: none;
+}
+  </style>
+<!-- Bank Details Section -->
+<div class="row mt-5 mb-4 justify-content-center g-4">
+    <div class="col-12 text-center mb-2">
+        <h3 class="fw-bold" style="color: var(--navy);"><i class="fas fa-university me-2 text-warning"></i>Bank Payment Details</h3>
+        <p class="text-muted fs-5">PURUSHOTTAM SHREE RAM PG COLLEGE</p>
+    </div>
+
+    <div class="col-md-6 col-lg-5">
+        <div class="bank-card union-card">
+            <div class="bank-logo-wrap d-flex align-items-center">
+                <i class="fas fa-building-columns fs-3" style="color: #1a73e8;"></i>
+                <span class="ms-2 fw-bold" style="color: #0f4c81; font-size: 1.1rem; letter-spacing: 0.5px;">UNION BANK</span>
+            </div>
+            <div class="bank-info">
+                <h5>UNION BANK OF INDIA</h5>
+                <ul class="bank-details-list">
+                    <li>
+                        <i class="fas fa-hashtag"></i> 
+                        <span><strong>A/C No:</strong> 510101005204762</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-key"></i> 
+                        <span><strong>IFSC:</strong> UBIN0904724</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-bg-icon"><i class="fas fa-building-columns"></i></div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-lg-5">
+        <div class="bank-card hdfc-card">
+            <div class="bank-logo-wrap d-flex align-items-center">
+                <i class="fas fa-square-h fs-3" style="color: #ed232a;"></i>
+                <span class="ms-2 fw-bold" style="color: #004c8f; font-size: 1.1rem; letter-spacing: 0.5px;">HDFC BANK</span>
+            </div>
+            <div class="bank-info">
+                <h5>HDFC BANK</h5>
+                <ul class="bank-details-list">
+                    <li>
+                        <i class="fas fa-hashtag"></i> 
+                        <span><strong>A/C No:</strong> 50200081338241</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-key"></i> 
+                        <span><strong>IFSC:</strong> HDFC0000298</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-bg-icon"><i class="fas fa-building-columns"></i></div>
+        </div>
+    </div>
+</div>
+
+<!-- QR Code Payment Section -->
+<div class="row mt-5 mb-4 justify-content-center g-4">
+    <div class="col-12 text-center mb-2">
+        <h3 class="fw-bold" style="color: var(--navy);"><i class="fas fa-qrcode me-2 text-warning"></i>Quick Payment via QR Code</h3>
+        <p class="text-muted fs-5">Scan & Pay Instantly</p>
+    </div>
+
+    <div class="col-md-6 col-lg-5">
+        <div class="bank-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-left: 8px solid #fff;">
+            <div class="bank-logo-wrap d-flex align-items-center">
+                <i class="fas fa-mobile-screen-button fs-3" style="color: #667eea;"></i>
+                <span class="ms-2 fw-bold" style="color: #667eea; font-size: 1.1rem; letter-spacing: 0.5px;">UPI / QR PAYMENT</span>
+            </div>
+            <div class="bank-info text-center">
+                <h5>Scan to Pay</h5>
+                <div class="qr-code-container" style="background: white; padding: 20px; border-radius: 15px; display: inline-block; margin: 20px 0; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                    <!-- Replace the src below with your actual QR code image path -->
+                    <img src="image/IMG_1673.PNG" alt="QR Code for Payment" style="width: 200px; height: 200px; object-fit: contain;" onerror="this.src='https://via.placeholder.com/200x200/667eea/ffffff?text=QR+CODE'; this.style.width='200px'; this.style.height='200px';">
+                </div>
+                <ul class="bank-details-list" style="margin-top: 20px;">
+                    <li>
+                        <i class="fas fa-copy"></i> 
+                        <span><strong>UPI ID:</strong> COLLEGE@UPI</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-mobile-alt"></i> 
+                        <span><strong>Scan with:</strong> PhonePe, Google Pay, Paytm</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-bg-icon"><i class="fas fa-qrcode"></i></div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-lg-5">
+        <div class="bank-card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); border-left: 8px solid #fff;">
+            <div class="bank-logo-wrap d-flex align-items-center">
+                <i class="fas fa-receipt fs-3" style="color: #f5576c;"></i>
+                <span class="ms-2 fw-bold" style="color: #f5576c; font-size: 1.1rem; letter-spacing: 0.5px;">PAYMENT INSTRUCTIONS</span>
+            </div>
+            <div class="bank-info">
+                <h5>How to Pay</h5>
+                <ul class="bank-details-list">
+                    <li>
+                        <i class="fas fa-1"></i> 
+                        <span><strong>Step 1:</strong> Open any UPI app</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-2"></i> 
+                        <span><strong>Step 2:</strong> Scan QR Code</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-3"></i> 
+                        <span><strong>Step 3:</strong> Enter amount & pay</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-4"></i> 
+                        <span><strong>Step 4:</strong> Save screenshot</span>
+                    </li>
+                </ul>
+                <div class="alert alert-light mt-3 mb-0" style="background: rgba(255,255,255,0.2); border: none; color: white;">
+                    <small><i class="fas fa-exclamation-triangle me-2"></i>Please save payment screenshot for verification</small>
+                </div>
+            </div>
+            <div class="card-bg-icon"><i class="fas fa-clipboard-check"></i></div>
+        </div>
+    </div>
+</div>
+
+  <!-- Linked Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+
+  <script>
+    function filterFees() {
+      let input = document.getElementById("courseSearch");
+      let filter = input.value.toUpperCase();
+      let tbody = document.getElementById("feeTableBody");
+      let tr = tbody.getElementsByTagName("tr");
+
+      for (let i = 0; i < tr.length; i++) {
+        let td = tr[i].getElementsByTagName("td")[1]; // Course name is in the second column (index 1)
+        if (td) {
+          let txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }       
+      }
+    }
+  </script>
+</body>
+</html>

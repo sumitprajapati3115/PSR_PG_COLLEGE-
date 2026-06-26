@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Courses - Purshottam Sri Ram P.G. College</title>
+  <link rel="icon" href="image/logo.png" type="image/png">
+  <!-- CSS Links -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    .page-header {
+      background: linear-gradient(rgba(10, 31, 92, 0.85), rgba(10, 31, 92, 0.85)), url('https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center;
+      background-size: cover;
+      padding: 60px 0;
+      text-align: center;
+      color: white;
+    }
+    .page-header h1 { font-weight: 800; font-size: 2.8rem; }
+    .breadcrumb-item a { color: var(--gold); text-decoration: none; }
+    .breadcrumb-item.active { color: rgba(255,255,255,0.8); }
+
+    .content-section { padding: 70px 0; scroll-margin-top: 190px; }
+    .section-eyebrow { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 3px; color: var(--saffron); font-weight: 700; margin-bottom: 8px; }
+    .section-title { font-size: clamp(1.5rem, 4vw, 2.2rem); font-weight: 800; color: var(--navy); margin-bottom: 10px; }
+    .section-divider { width: 60px; height: 4px; background: linear-gradient(90deg, var(--saffron), var(--gold)); border-radius: 2px; margin-bottom: 40px; }
+
+    /* ===== COURSE CARDS ===== */
+    .course-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all 0.4s;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      height: 100%;
+      border: 1px solid #eee;
+    }
+    .course-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    }
+    .course-card-header {
+      padding: 25px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .course-ug { background: linear-gradient(135deg, var(--navy), #1a3a8f); }
+    .course-pg { background: linear-gradient(135deg, var(--deep-maroon), #5a0000); }
+    .course-prof { background: linear-gradient(135deg, var(--forest-green), #0a4d1a); }
+    .course-card-icon {
+      font-size: 2.5rem;
+      color: rgba(255,255,255,0.3);
+      position: absolute;
+      right: 20px; top: 15px;
+    }
+    .course-card-title { font-size: 1.5rem; font-weight: 800; color: white; }
+    .course-card-subtitle { font-size: 0.8rem; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 1px; }
+    .course-card-body { padding: 20px; }
+    .course-subject-list { list-style: none; padding: 0; margin-bottom: 0; }
+    .course-subject-list li {
+      padding: 8px 0;
+      border-bottom: 1px dashed #eee;
+      font-size: 0.88rem;
+      color: #444;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .course-subject-list li:last-child { border-bottom: none; }
+    .course-subject-list li i { color: var(--forest-green); font-size: 0.75rem; }
+    .course-card-footer {
+      padding: 15px 20px;
+      border-top: 1px solid #f0f0f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #fafafa;
+    }
+    .btn-apply {
+      background: linear-gradient(135deg, var(--saffron), #ff4500);
+      color: white;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-decoration: none;
+    }
+    .btn-apply:hover { transform: scale(1.05); color: white; box-shadow: 0 5px 15px rgba(255,107,0,0.3); }
+    
+    .bg-light-alt { background-color: #f4f6f9; }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar Placeholder -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="container">
+      <h1>Academic Programs</h1>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb justify-content-center mb-0 bg-transparent">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Courses</li>
+        </ol>
+      </nav>
+    </div>
+  </header>
+
+  <!-- UNDERGRADUATE SECTION -->
+  <section class="content-section" id="ug">
+    <div class="container">
+      <div class="section-eyebrow">Graduation</div>
+      <h2 class="section-title">Undergraduate Programs (UG)</h2>
+      <div class="section-divider"></div>
+    
+      <div class="row g-4">
+        <div class="col-md-3 col-sm-6 aos-fade-up">
+          <div class="course-card">
+            <div class="course-card-header course-ug">
+              <i class="fas fa-atom course-card-icon"></i>
+              <div class="course-card-subtitle">Bachelor of Science</div>
+              <div class="course-card-title">B.Sc.</div>
+            </div>
+            <div class="course-card-body">
+              <ul class="course-subject-list">
+                <li><i class="fas fa-circle"></i>Physics (भौतिक विज्ञान)</li>
+                <li><i class="fas fa-circle"></i>Chemistry (रसायन विज्ञान)</li>
+                <li><i class="fas fa-circle"></i>Mathematics (गणित)</li>
+                <li><i class="fas fa-circle"></i>Zoology (जन्तु विज्ञान)</li>
+                <li><i class="fas fa-circle"></i>Botany (वनस्पति विज्ञान)</li>
+              </ul>
+            </div>
+            <div class="course-card-footer">
+              <span style="font-size:0.82rem;color:#888;">Duration: 3 Years</span>
+              <a href="https://erp.psrpc.in/online_admission" class="btn-apply">Apply Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 aos-fade-up aos-delay-1">
+          <div class="course-card">
+            <div class="course-card-header course-ug">
+              <i class="fas fa-book course-card-icon"></i>
+              <div class="course-card-subtitle">Bachelor of Arts</div>
+              <div class="course-card-title">B.A.</div>
+            </div>
+            <div class="course-card-body">
+              <ul class="course-subject-list">
+                <li><i class="fas fa-circle"></i>Hindi Literature</li>
+                <li><i class="fas fa-circle"></i>English</li>
+                <li><i class="fas fa-circle"></i>Sociology (समाजशास्त्र)</li>
+                <li><i class="fas fa-circle"></i>Economics (अर्थशास्त्र)</li>
+                <li><i class="fas fa-circle"></i>Education (शिक्षाशास्त्र)</li>
+              </ul>
+            </div>
+            <div class="course-card-footer">
+              <span style="font-size:0.82rem;color:#888;">Duration: 3 Years</span>
+              <a href="https://erp.psrpc.in/online_admission" class="btn-apply">Apply Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 aos-fade-up aos-delay-2">
+          <div class="course-card">
+            <div class="course-card-header course-ug">
+              <i class="fas fa-briefcase course-card-icon"></i>
+              <div class="course-card-subtitle">Bachelor of Commerce</div>
+              <div class="course-card-title">B.Com.</div>
+            </div>
+            <div class="course-card-body">
+              <ul class="course-subject-list">
+                <li><i class="fas fa-circle"></i>Accountancy</li>
+                <li><i class="fas fa-circle"></i>Business Studies</li>
+                <li><i class="fas fa-circle"></i>Economics</li>
+                <li><i class="fas fa-circle"></i>Mathematics</li>
+                <li><i class="fas fa-circle"></i>Computer Applications</li>
+              </ul>
+            </div>
+            <div class="course-card-footer">
+              <span style="font-size:0.82rem;color:#888;">Duration: 3 Years</span>
+              <a href="https://erp.psrpc.in/online_admission" class="btn-apply">Apply Now</a>
+            </div>
+          </div>
+        </div>
+        <!-- New BBA Card -->
+        <div class="col-md-3 col-sm-6 aos-fade-up aos-delay-3">
+          <div class="course-card">
+            <div class="course-card-header course-ug">
+              <i class="fas fa-chart-line course-card-icon"></i>
+              <div class="course-card-subtitle">Bachelor of Business Administration</div>
+              <div class="course-card-title">B.B.A.</div>
+            </div>
+            <div class="course-card-body">
+              <ul class="course-subject-list">
+                <li><i class="fas fa-circle"></i>Principles of Management</li>
+                <li><i class="fas fa-circle"></i>Business Economics</li>
+                <li><i class="fas fa-circle"></i>Financial Accounting</li>
+                <li><i class="fas fa-circle"></i>Marketing Management</li>
+                <li><i class="fas fa-circle"></i>Organizational Behavior</li>
+              </ul>
+            </div>
+            <div class="course-card-footer">
+              <span style="font-size:0.82rem;color:#888;">Duration: 3 Years</span>
+              <a href="https://erp.psrpc.in/online_admission" class="btn-apply">Apply Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POSTGRADUATE SECTION -->
+  <section class="content-section bg-light-alt" id="pg">
+    <div class="container">
+      <div class="section-eyebrow">Post Graduation</div>
+      <h2 class="section-title">Postgraduate Programs (PG)</h2>
+      <div class="section-divider"></div>
+      
+      <div class="row g-4 justify-content-center">
+        <div class="col-md-5">
+          <div class="course-card">
+            <div class="course-card-header course-pg">
+              <i class="fas fa-microscope course-card-icon"></i>
+              <div class="course-card-subtitle">Master of Science</div>
+              <div class="course-card-title">M.Sc.</div>
+            </div>
+            <div class="course-card-body">
+              <p style="font-size:0.85rem; color:#666;">Advanced studies for science graduates focusing on deep specialization.</p>
+              <ul class="course-subject-list">
+                <li><i class="fas fa-check-circle"></i>गणित (Mathematics)</li>
+                <li><i class="fas fa-check-circle"></i>भौतिक विज्ञान (Physics)</li>
+                <li><i class="fas fa-check-circle"></i>रसायन विज्ञान (Chemistry)</li>
+                <li><i class="fas fa-check-circle"></i>जन्तु विज्ञान (Zoology)</li>
+                <li><i class="fas fa-check-circle"></i>वनस्पति विज्ञान (Botany)</li>
+              </ul>
+            </div>
+            <div class="course-card-footer">
+              <span style="font-size:0.85rem; font-weight:600; color:var(--deep-maroon);">Duration: 2 Years</span>
+              <a href="https://erp.psrpc.in/online_admission" class="btn-apply">Apply Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="course-card">
+            <div class="course-card-header course-pg">
+              <i class="fas fa-language course-card-icon"></i>
+              <div class="course-card-subtitle">Master of Arts</div>
+              <div class="course-card-title">M.A.</div>
+            </div>
+            <div class="course-card-body">
+              <p style="font-size:0.85rem; color:#666;">Master level program offering in-depth knowledge in humanities.</p>
+              <ul class="course-subject-list">
+                <li><i class="fas fa-check-circle"></i>शिक्षाशास्त्र (Education)</li>
+                <li><i class="fas fa-check-circle"></i>समाजशास्त्र (Sociology)</li>
+                <li><i class="fas fa-check-circle"></i>हिंदी (Hindi)</li>
+                <li><i class="fas fa-check-circle"></i>अंग्रेज़ी (English)</li>
+                <li><i class="fas fa-check-circle"></i>अर्थशास्त्र (Economics)</li>
+              </ul>
+            </div>
+            <div class="course-card-footer">
+              <span style="font-size:0.85rem; font-weight:600; color:var(--deep-maroon);">Duration: 2 Years</span>
+              <a href="https://erp.psrpc.in/online_admission" class="btn-apply">Apply Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROFESSIONAL SECTION -->
+  <section class="content-section" id="prof">
+    <div class="container">
+      <div class="section-eyebrow">Career Ready</div>
+      <h2 class="section-title">Professional Programs</h2>
+      <div class="section-divider"></div>
+      
+      <div class="row g-4">
+        <div class="col-md-3 col-sm-6" id="course-bca">
+          <div class="course-card">
+            <div class="course-card-header course-prof">
+              <i class="fas fa-laptop-code course-card-icon"></i>
+              <div class="course-card-subtitle">Bachelor of Computer Applications</div>
+              <div class="course-card-title">BCA</div>
+            </div>
+            <div class="course-card-body">
+              <ul class="course-subject-list">
+                <li><i class="fas fa-check-circle"></i>Programming Languages</li>
+                <li><i class="fas fa-check-circle"></i>Database Management</li>
+                <li><i class="fas fa-check-circle"></i>Web Development</li>
+                <li><i class="fas fa-check-circle"></i>Software Engineering</li>
+              </ul>
+            </div>
+            <div class="course-card-footer">
+              <span style="font-size:0.85rem; font-weight:600;">3 Years</span>
+              <a href="https://erp.psrpc.in/online_admission" class="btn-apply" style="padding: 6px 15px;">Apply</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6" id="course-it">
+          <div class="course-card">
+            <div class="course-card-header course-prof">
+              <i class="fas fa-network-wired course-card-icon"></i>
+              <div class="course-card-subtitle">Bachelor of Science IT</div>
+              <div class="course-card-title">B.Sc. IT</div>
+            </div>
+            <div class="course-card-body">
+              <ul class="course-subject-list">
+                <li><i class="fas fa-check-circle"></i>Information Technology</li>
+                <li><i class="fas fa-check-circle"></i>Networking Basics</li>
+                <li><i class="fas fa-check-circle"></i>Cybersecurity</li>
+                <li><i class="fas fa-check-circle"></i>Cloud Computing</li>
+              </ul>
+            </div>
+            <div class="course-card-footer">
+              <span style="font-size:0.85rem; font-weight:600;">3 Years</span>
+              <a href="https://erp.psrpc.in/online_admission" class="btn-apply" style="padding: 6px 15px;">Apply</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6" id="course-blib">
+          <div class="course-card">
+            <div class="course-card-header course-prof">
+              <i class="fas fa-book-open course-card-icon"></i>
+              <div class="course-card-subtitle">Bachelor of Library Science</div>
+              <div class="course-card-title">B.Lib</div>
+            </div>
+            <div class="course-card-body">
+              <ul class="course-subject-list">
+                <li><i class="fas fa-check-circle"></i>Library Management</li>
+                <li><i class="fas fa-check-circle"></i>Cataloguing</li>
+                <li><i class="fas fa-check-circle"></i>Digital Libraries</li>
+                <li><i class="fas fa-check-circle"></i>Reference Services</li>
+              </ul>
+            </div>
+            <div class="course-card-footer">
+              <span style="font-size:0.85rem; font-weight:600;">1 Year</span>
+              <a href="https://erp.psrpc.in/online_admission" class="btn-apply" style="padding: 6px 15px;">Apply</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6" id="course-bed">
+          <div class="course-card">
+            <div class="course-card-header course-prof">
+              <i class="fas fa-chalkboard course-card-icon"></i>
+              <div class="course-card-subtitle">Bachelor of Education</div>
+              <div class="course-card-title">B.Ed</div>
+            </div>
+            <div class="course-card-body">
+              <ul class="course-subject-list">
+                <li><i class="fas fa-check-circle"></i>Pedagogy</li>
+                <li><i class="fas fa-check-circle"></i>Educational Psychology</li>
+                <li><i class="fas fa-check-circle"></i>Teaching Practice</li>
+                <li><i class="fas fa-check-circle"></i>Curriculum Design</li>
+              </ul>
+            </div>
+            <div class="course-card-footer">
+              <span style="font-size:0.85rem; font-weight:600;">2 Years</span>
+              <a href="https://erp.psrpc.in/online_admission" class="btn-apply" style="padding: 6px 15px;">Apply</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Linked Footer -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>

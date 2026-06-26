@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Material - Purshottam Sri Ram P.G. College</title>
+  <link rel="icon" href="image/logo.png" type="image/png">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .page-header {
+      background-image: linear-gradient(rgba(10, 31, 92, 0.85), rgba(10, 31, 92, 0.85)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+      background-position: center; background-repeat: no-repeat; background-size: cover;
+      padding: 60px 0; text-align: center; color: white;
+    }
+    .page-header h1 { font-weight: 800; font-size: 2.8rem; }
+    .breadcrumb-item a { color: var(--gold); text-decoration: none; }
+    .content-section { padding: 70px 0; min-height: 50vh;}
+    .section-title { font-size: clamp(1.5rem, 4vw, 2.2rem); font-weight: 800; color: var(--navy); margin-bottom: 10px; }
+    .section-divider { width: 60px; height: 4px; background: linear-gradient(90deg, var(--saffron), var(--gold)); border-radius: 2px; margin-bottom: 40px; }
+    .material-card { background: white; border-radius: 12px; padding: 25px; display: flex; align-items: center; gap: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 1px solid #eee; margin-bottom: 20px;}
+    .material-icon { width: 60px; height: 60px; background: rgba(26, 107, 42, 0.1); color: var(--forest-green); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0;}
+  </style>
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+
+  <header class="page-header">
+    <div class="container">
+      <h1>E-Study Material</h1>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb justify-content-center mb-0 bg-transparent">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Resources</li>
+        </ol>
+      </nav>
+    </div>
+  </header>
+
+  <section class="content-section bg-light">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-title">Digital Learning Resources</h2>
+        <div class="section-divider mx-auto"></div>
+      </div>
+      <div class="row justify-content-center mt-4">
+        <div class="col-lg-8">
+          
+          <div class="material-card">
+            <div class="material-icon"><i class="fas fa-book"></i></div>
+            <div class="flex-grow-1">
+              <h5 style="font-weight: 700; color: var(--navy); margin-bottom: 5px;">Library E-Books portal</h5>
+              <p class="text-muted mb-0" style="font-size: 0.85rem;">Access thousands of digital books through the library network.</p>
+            </div>
+            <a href="https://ndl.iitkgp.ac.in/" target="_blank" class="btn btn-outline-success btn-sm px-4">Access <i class="fas fa-external-link-alt ms-1"></i></a>
+          </div>
+
+          <div class="material-card">
+            <div class="material-icon"><i class="fas fa-file-alt"></i></div>
+            <div class="flex-grow-1">
+              <h5 style="font-weight: 700; color: var(--navy); margin-bottom: 5px;">Previous Year Papers</h5>
+              <p class="text-muted mb-0" style="font-size: 0.85rem;">Download previous exam papers for better preparation.</p>
+            </div>
+          <a href="downloads/previous_papers.pdf" download class="btn btn-outline-success btn-sm px-4"><i class="fas fa-download me-1"></i> Download</a>
+        </div>
+
+        <div class="material-card">
+          <div class="material-icon"><i class="fas fa-atom"></i></div>
+          <div class="flex-grow-1">
+            <h5 style="font-weight: 700; color: var(--navy); margin-bottom: 5px;">B.Sc. Notes & Assignments</h5>
+            <p class="text-muted mb-0" style="font-size: 0.85rem;">Download subject-wise notes for Physics, Chemistry, and Math.</p>
+          </div>
+          <a href="downloads/bsc_notes.pdf" download class="btn btn-outline-success btn-sm px-4"><i class="fas fa-download me-1"></i> Download</a>
+        </div>
+
+        <div class="material-card">
+          <div class="material-icon"><i class="fas fa-book-reader"></i></div>
+          <div class="flex-grow-1">
+            <h5 style="font-weight: 700; color: var(--navy); margin-bottom: 5px;">B.A. Study Material</h5>
+            <p class="text-muted mb-0" style="font-size: 0.85rem;">Access important questions and study guides for Arts subjects.</p>
+          </div>
+          <a href="downloads/ba_notes.pdf" download class="btn btn-outline-success btn-sm px-4"><i class="fas fa-download me-1"></i> Download</a>
+        </div>
+
+        <div class="material-card">
+          <div class="material-icon"><i class="fas fa-laptop-code"></i></div>
+          <div class="flex-grow-1">
+            <h5 style="font-weight: 700; color: var(--navy); margin-bottom: 5px;">Professional Courses (BCA/IT)</h5>
+            <p class="text-muted mb-0" style="font-size: 0.85rem;">Programming lab manuals, project guidelines, and lecture slides.</p>
+          </div>
+          <a href="downloads/prof_notes.pdf" download class="btn btn-outline-success btn-sm px-4"><i class="fas fa-download me-1"></i> Download</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
